@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TypingExperience from '../components/TypingExperience.astro';
+import { getCorpus } from '../lib/poems';
+
+const { corpus } = await getCorpus();
+---
+<BaseLayout
+  title="Kindling — A writing warm-up"
+  description="Type a poem. Get into writing flow. A calm, free warm-up for writers — no score, no timer, just the words."
+>
+  <TypingExperience corpus={corpus} dateSeeded={true} />
+</BaseLayout>

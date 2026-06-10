@@ -1,0 +1,61 @@
+---
+// The shared typing surface: intro flame, the poem stage, the Lv bar + Lannair
+// footer, and the corpus/script injection. The engine + leveling scripts are
+// byte-identical to the approved build; only the corpus source and an optional
+// "first poem" differ per route.
+interface Props {
+  corpus: { text: string; attribution: string; title: string }[];
+  firstIndex?: number | null;
+  dateSeeded?: boolean;
+}
+const { corpus, firstIndex = null, dateSeeded = false } = Astro.props;
+---
+<div id="intro" aria-hidden="true">
+  <svg id="intro-flame" width="96" height="96" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+  </svg>
+</div>
+
+<main id="stage">
+  <p class="keyebrow" id="keyebrow"><!-- "TODAY'S POEM · MON DD" on the home page --></p>
+  <div class="ticker" id="ticker"><!-- engine renders the poem lines here --></div>
+  <div class="attrib" id="attrib"></div>
+  <p class="hint gone" id="hint">just start typing</p>
+  <slot />
+</main>
+
+<!-- Footer, three centred slots: Lv bar (left) · get Lannair (centre, greyed) ·
+     save-as-image (right, appears once a poem is finished). -->
+<footer class="kfooter">
+  <div class="kbar">
+    <div class="k-levelrow">
+      <span class="k-level" id="kLevel">Lv 1</span>
+      <span class="k-mult" id="kMult">2×</span>
+    </div>
+    <div class="k-track" id="kTrack"><div class="k-fill" id="kFill"></div></div>
+  </div>
+  <a class="k-open" href="https://lannair.app" target="_blank" rel="noopener">get Lannair →</a>
+  <button id="ksave" class="ksave" type="button" aria-label="Save this poem as an image" title="Save as image">
+    <svg viewBox="0 0 46 20" fill="none" stroke="currentColor" aria-hidden="true">
+      <!-- Lannair's image placeholder: a photo frame with the ember flame inside -->
+      <rect x="1.5" y="1.5" width="25" height="17" rx="2.5" stroke-width="1.6"></rect>
+      <g transform="translate(8,4) scale(0.5)">
+        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"></path>
+      </g>
+      <!-- download symbol -->
+      <g stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="38" y1="2.5" x2="38" y2="12.5"></line>
+        <path d="M34 9 L38 13 L42 9"></path>
+        <path d="M33.5 16.5 L42.5 16.5"></path>
+      </g>
+    </svg>
+  </button>
+</footer>
+
+<!-- Per-page data as inert JSON, re-read by the engine on every navigation
+     (works whether or not inline scripts re-execute under view transitions). -->
+<script type="application/json" id="kindle-data" is:inline set:html={JSON.stringify({ corpus, firstIndex, dateSeeded })}></script>
+<script is:inline src="/vendor/dom-to-image-more.min.js"></script>
+<script is:inline src="/kindle/kindle-leveling.js"></script>
+<script is:inline src="/kindle/kindle-engine.js"></script>
+<script is:inline src="/kindle/kindle-page.js"></script>

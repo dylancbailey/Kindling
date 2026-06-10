@@ -1,0 +1,707 @@
+[
+  {
+    "id": "hope-is-the-thing-with-feathers",
+    "slug": "hope-is-the-thing-with-feathers",
+    "title": "Hope is the Thing with Feathers",
+    "author": "Emily Dickinson",
+    "year": 1891,
+    "lines": [
+      "Hope is the thing with feathers",
+      "That perches in the soul,",
+      "And sings the tune without the words,",
+      "And never stops at all,"
+    ],
+    "editorial_note": "Dickinson never names the bird; she lets the metaphor do the singing. Typing these four lines is a small lesson in how few words real consolation needs. Text follows the regularized 1891 first edition (Poems, Second Series)."
+  },
+  {
+    "id": "because-i-could-not-stop-for-death",
+    "slug": "because-i-could-not-stop-for-death",
+    "title": "Because I Could Not Stop for Death",
+    "author": "Emily Dickinson",
+    "year": 1890,
+    "lines": [
+      "Because I could not stop for Death,",
+      "He kindly stopped for me;",
+      "The carriage held but just ourselves,",
+      "And Immortality."
+    ],
+    "editorial_note": "Death arrives here as a courteous gentleman caller, not a terror, and the poem's strange calm is its whole argument. First printed in 1890 as “The Chariot,” with the punctuation smoothed from Dickinson's manuscript dashes."
+  },
+  {
+    "id": "the-tyger",
+    "slug": "the-tyger",
+    "title": "The Tyger",
+    "author": "William Blake",
+    "year": 1794,
+    "lines": [
+      "Tyger Tyger, burning bright,",
+      "In the forests of the night;",
+      "What immortal hand or eye,",
+      "Could frame thy fearful symmetry?"
+    ],
+    "editorial_note": "Blake's hammer-blow rhythm makes the fearful symmetry feel forged rather than written. Read it aloud once and you'll feel why the questions are never answered. From Songs of Experience, 1794."
+  },
+  {
+    "id": "auguries-of-innocence",
+    "slug": "auguries-of-innocence",
+    "title": "Auguries of Innocence",
+    "author": "William Blake",
+    "year": 1863,
+    "lines": [
+      "To see a World in a Grain of Sand,",
+      "And a Heaven in a Wild Flower,",
+      "Hold Infinity in the palm of your hand,",
+      "And Eternity in an hour."
+    ],
+    "editorial_note": "Four lines that try to hold the infinite in the palm of a hand, and very nearly succeed. Written around 1803 but unpublished until 1863, long after Blake could see how often they would be quoted."
+  },
+  {
+    "id": "stopping-by-woods-on-a-snowy-evening",
+    "slug": "stopping-by-woods-on-a-snowy-evening",
+    "title": "Stopping by Woods on a Snowy Evening",
+    "author": "Robert Frost",
+    "year": 1923,
+    "lines": [
+      "Whose woods these are I think I know.",
+      "His house is in the village though;",
+      "He will not see me stopping here",
+      "To watch his woods fill up with snow."
+    ],
+    "editorial_note": "The pull between the quiet woods and the promises waiting at home is the whole poem in miniature. A good one to type slowly, the way the snow falls. From New Hampshire, 1923.",
+    "day_of_year": 355
+  },
+  {
+    "id": "the-road-not-taken",
+    "slug": "the-road-not-taken",
+    "title": "The Road Not Taken",
+    "author": "Robert Frost",
+    "year": 1916,
+    "lines": [
+      "Two roads diverged in a yellow wood,",
+      "And sorry I could not travel both",
+      "And be one traveler, long I stood",
+      "And looked down one as far as I could"
+    ],
+    "editorial_note": "Famously misread as a triumph of nonconformity, though Frost meant the sigh to be ambiguous. Begin here and let the fork in the wood stay genuinely uncertain. From Mountain Interval, 1916."
+  },
+  {
+    "id": "in-the-bleak-midwinter",
+    "slug": "in-the-bleak-midwinter",
+    "title": "In the Bleak Midwinter",
+    "author": "Christina Rossetti",
+    "year": 1872,
+    "lines": [
+      "In the bleak midwinter,",
+      "Frosty wind made moan,",
+      "Earth stood hard as iron,",
+      "Water like a stone;"
+    ],
+    "editorial_note": "Rossetti builds the cold out of hard, plain nouns — iron, stone, moan — before any warmth arrives. The frost is doing real work in these opening lines. First published in 1872.",
+    "day_of_year": 359
+  },
+  {
+    "id": "remember",
+    "slug": "remember",
+    "title": "Remember",
+    "author": "Christina Rossetti",
+    "year": 1862,
+    "lines": [
+      "Remember me when I am gone away,",
+      "Gone far away into the silent land;",
+      "When you can no more hold me by the hand,",
+      "Nor I half turn to go yet turning stay."
+    ],
+    "editorial_note": "A sonnet that asks to be remembered and then, gently, releases the asking. Rossetti was twenty-one when she wrote it, already unafraid of the silent land. From Goblin Market and Other Poems, 1862."
+  },
+  {
+    "id": "i-wandered-lonely-as-a-cloud",
+    "slug": "i-wandered-lonely-as-a-cloud",
+    "title": "I Wandered Lonely as a Cloud",
+    "author": "William Wordsworth",
+    "year": 1807,
+    "lines": [
+      "I wandered lonely as a cloud",
+      "That floats on high o'er vales and hills,",
+      "When all at once I saw a crowd,",
+      "A host, of golden daffodils;"
+    ],
+    "editorial_note": "The daffodils are a crowd, a host — Wordsworth cannot help making them a company worth joining. A bright, generous poem to warm up on. From Poems, in Two Volumes, 1807.",
+    "day_of_year": 79
+  },
+  {
+    "id": "to-autumn",
+    "slug": "to-autumn",
+    "title": "To Autumn",
+    "author": "John Keats",
+    "year": 1820,
+    "lines": [
+      "Season of mists and mellow fruitfulness,",
+      "Close bosom-friend of the maturing sun;",
+      "Conspiring with him how to load and bless",
+      "With fruit the vines that round the thatch-eves run;"
+    ],
+    "editorial_note": "Keats packs the line so full of ripeness it almost sags, like the vines he is describing. One of the last great things he wrote, and it knows the season is turning. Published 1820.",
+    "day_of_year": 265
+  },
+  {
+    "id": "there-will-come-soft-rains",
+    "slug": "there-will-come-soft-rains",
+    "title": "There Will Come Soft Rains",
+    "author": "Sara Teasdale",
+    "year": 1918,
+    "lines": [
+      "There will come soft rains and the smell of the ground,",
+      "And swallows circling with their shimmering sound;",
+      "And frogs in the pools singing at night,",
+      "And wild plum trees in tremulous white,"
+    ],
+    "editorial_note": "Teasdale imagines a spring that carries on without us, indifferent and lovely. Written in 1918, the indifference reads as both comfort and warning. First published in Harper's Monthly.",
+    "day_of_year": 112
+  },
+  {
+    "id": "the-negro-speaks-of-rivers",
+    "slug": "the-negro-speaks-of-rivers",
+    "title": "The Negro Speaks of Rivers",
+    "author": "Langston Hughes",
+    "year": 1921,
+    "lines": [
+      "I've known rivers:",
+      "Ancient, dusky rivers.",
+      "My soul has grown deep like the rivers."
+    ],
+    "editorial_note": "Hughes wrote this at seventeen, crossing the Mississippi by train, and the lines already carry centuries. The closing turn — a soul grown deep like the rivers — is one of the great endings in American verse. First published in The Crisis, 1921."
+  },
+  {
+    "id": "sonnet-18",
+    "slug": "sonnet-18",
+    "title": "Sonnet 18: Shall I Compare Thee to a Summer's Day?",
+    "author": "William Shakespeare",
+    "year": 1609,
+    "lines": [
+      "Shall I compare thee to a summer's day?",
+      "Thou art more lovely and more temperate:",
+      "Rough winds do shake the darling buds of May,",
+      "And summer's lease hath all too short a date;"
+    ],
+    "editorial_note": "The most quoted opening in English, and it earns it — a promise that the poem itself will outlast the summer it describes. From the 1609 Quarto of Shakespeare's sonnets."
+  },
+  {
+    "id": "ozymandias",
+    "slug": "ozymandias",
+    "title": "Ozymandias",
+    "author": "Percy Bysshe Shelley",
+    "year": 1818,
+    "lines": [
+      "I met a traveller from an antique land",
+      "Who said: Two vast and trunkless legs of stone",
+      "Stand in the desert. Near them, on the sand,",
+      "Half sunk, a shattered visage lies, whose frown,"
+    ],
+    "editorial_note": "A sonnet about the vanity of power that has, ironically, outlived every empire since. Shelley wrote it in friendly competition with a friend; his version is the one that survived. First published in The Examiner, 1818."
+  },
+  {
+    "id": "she-walks-in-beauty",
+    "slug": "she-walks-in-beauty",
+    "title": "She Walks in Beauty",
+    "author": "Lord Byron",
+    "year": 1815,
+    "lines": [
+      "She walks in beauty, like the night",
+      "Of cloudless climes and starry skies;",
+      "And all that's best of dark and bright",
+      "Meet in her aspect and her eyes;"
+    ],
+    "editorial_note": "Byron reportedly wrote this after seeing a cousin in a black mourning gown spangled with sequins. The whole poem balances on that image of dark and bright meeting. From Hebrew Melodies, 1815."
+  },
+  {
+    "id": "the-raven",
+    "slug": "the-raven",
+    "title": "The Raven",
+    "author": "Edgar Allan Poe",
+    "year": 1845,
+    "lines": [
+      "Once upon a midnight dreary, while I pondered, weak and weary,",
+      "Over many a quaint and curious volume of forgotten lore—",
+      "While I nodded, nearly napping, suddenly there came a tapping,",
+      "As of some one gently rapping, rapping at my chamber door."
+    ],
+    "editorial_note": "Poe engineered this poem like a machine for dread — the internal rhymes and that relentless meter pull you forward against your will. It made him famous and almost no money. First published 1845."
+  },
+  {
+    "id": "the-new-colossus",
+    "slug": "the-new-colossus",
+    "title": "The New Colossus",
+    "author": "Emma Lazarus",
+    "year": 1883,
+    "lines": [
+      "Give me your tired, your poor,",
+      "Your huddled masses yearning to breathe free,",
+      "The wretched refuse of your teeming shore.",
+      "Send these, the homeless, tempest-tost to me,"
+    ],
+    "editorial_note": "Written to help fund the Statue of Liberty's pedestal, and later cast onto it — a sonnet that became a nation's self-description. Lazarus was thirty-four and would die four years later. Written 1883."
+  },
+  {
+    "id": "the-lake-isle-of-innisfree",
+    "slug": "the-lake-isle-of-innisfree",
+    "title": "The Lake Isle of Innisfree",
+    "author": "William Butler Yeats",
+    "year": 1890,
+    "lines": [
+      "I will arise and go now, and go to Innisfree,",
+      "And a small cabin build there, of clay and wattles made;",
+      "Nine bean-rows will I have there, a hive for the honey-bee,",
+      "And live alone in the bee-loud glade."
+    ],
+    "editorial_note": "Yeats said the poem came to him from homesickness on a London street, hearing a little fountain in a shop window. The longing for a quieter life has never dated. First published 1890."
+  },
+  {
+    "id": "when-you-are-old",
+    "slug": "when-you-are-old",
+    "title": "When You Are Old",
+    "author": "William Butler Yeats",
+    "year": 1893,
+    "lines": [
+      "When you are old and grey and full of sleep,",
+      "And nodding by the fire, take down this book,",
+      "And slowly read, and dream of the soft look",
+      "Your eyes had once, and of their shadows deep;"
+    ],
+    "editorial_note": "A love poem addressed across decades to a future, older self — asking to be remembered for having loved truly. Written for Maud Gonne, who never returned the feeling. From The Rose, 1893."
+  },
+  {
+    "id": "fog",
+    "slug": "fog",
+    "title": "Fog",
+    "author": "Carl Sandburg",
+    "year": 1916,
+    "lines": [
+      "The fog comes",
+      "on little cat feet.",
+      "It sits looking over harbor and city",
+      "on silent haunches and then moves on."
+    ],
+    "editorial_note": "Six lines, one perfect image, no wasted breath. Sandburg proved an American poem could be as spare as a haiku and still feel like home. From Chicago Poems, 1916."
+  },
+  {
+    "id": "invictus",
+    "slug": "invictus",
+    "title": "Invictus",
+    "author": "William Ernest Henley",
+    "year": 1888,
+    "lines": [
+      "Out of the night that covers me,",
+      "Black as the pit from pole to pole,",
+      "I thank whatever gods may be",
+      "For my unconquerable soul."
+    ],
+    "editorial_note": "Henley wrote it from a hospital bed, after losing a leg and fighting to keep the other. Defiance has rarely been set to a steadier beat. First published 1888."
+  },
+  {
+    "id": "a-red-red-rose",
+    "slug": "a-red-red-rose",
+    "title": "A Red, Red Rose",
+    "author": "Robert Burns",
+    "year": 1794,
+    "lines": [
+      "O my Luve is like a red, red rose",
+      "That's newly sprung in June;",
+      "O my Luve is like the melody",
+      "That's sweetly played in tune."
+    ],
+    "editorial_note": "Burns built this from fragments of old Scottish songs, which is why it feels less written than remembered. A good one to type if you want plain words doing heavy lifting. First published 1794."
+  },
+  {
+    "id": "death-be-not-proud",
+    "slug": "death-be-not-proud",
+    "title": "Death, Be Not Proud",
+    "author": "John Donne",
+    "year": 1633,
+    "lines": [
+      "Death, be not proud, though some have called thee",
+      "Mighty and dreadful, for thou art not so;",
+      "For those whom thou think'st thou dost overthrow",
+      "Die not, poor Death, nor yet canst thou kill me."
+    ],
+    "editorial_note": "Donne argues with Death as if cross-examining a witness, and somehow wins. The bravado is the point — and the comfort. From the posthumous Poems, 1633."
+  },
+  {
+    "id": "the-darkling-thrush",
+    "slug": "the-darkling-thrush",
+    "title": "The Darkling Thrush",
+    "author": "Thomas Hardy",
+    "year": 1900,
+    "lines": [
+      "I leant upon a coppice gate",
+      "When Frost was spectre-grey,",
+      "And Winter's dregs made desolate",
+      "The weakening eye of day."
+    ],
+    "editorial_note": "Dated to the last day of the nineteenth century, the poem finds one stubborn bird singing into the gloom. Hardy lets you decide whether that's hope or just habit. First published 1900."
+  },
+  {
+    "id": "loveliest-of-trees",
+    "slug": "loveliest-of-trees",
+    "title": "Loveliest of Trees, the Cherry Now",
+    "author": "A. E. Housman",
+    "year": 1896,
+    "lines": [
+      "Loveliest of trees, the cherry now",
+      "Is hung with bloom along the bough,",
+      "And stands about the woodland ride",
+      "Wearing white for Eastertide."
+    ],
+    "editorial_note": "A young man does the arithmetic of his own life against the blossom and decides to go look at it. Housman's gift was making mortality sound like good sense. From A Shropshire Lad, 1896."
+  },
+  {
+    "id": "we-wear-the-mask",
+    "slug": "we-wear-the-mask",
+    "title": "We Wear the Mask",
+    "author": "Paul Laurence Dunbar",
+    "year": 1896,
+    "lines": [
+      "We wear the mask that grins and lies,",
+      "It hides our cheeks and shades our eyes,—",
+      "This debt we pay to human guile;",
+      "With torn and bleeding hearts we smile,"
+    ],
+    "editorial_note": "Dunbar names the cost of the smile the world demands — written by a Black American poet at the turn of the century, and exact about a hiding that was never voluntary. From Lyrics of Lowly Life, 1896."
+  },
+  {
+    "id": "sympathy",
+    "slug": "sympathy",
+    "title": "Sympathy",
+    "author": "Paul Laurence Dunbar",
+    "year": 1899,
+    "lines": [
+      "I know what the caged bird feels, alas!",
+      "When the sun is bright on the upland slopes;",
+      "When the wind stirs soft through the springing grass,",
+      "And the river flows like a stream of glass;"
+    ],
+    "editorial_note": "The poem that gave Maya Angelou her title — Dunbar's caged bird sings not from joy but from a prayer it cannot stop making. From Lyrics of the Hearthside, 1899."
+  },
+  {
+    "id": "the-soldier",
+    "slug": "the-soldier",
+    "title": "The Soldier",
+    "author": "Rupert Brooke",
+    "year": 1915,
+    "lines": [
+      "If I should die, think only this of me:",
+      "That there's some corner of a foreign field",
+      "That is for ever England. There shall be",
+      "In that rich earth a richer dust concealed;"
+    ],
+    "editorial_note": "Brooke's sonnet made the early war sound noble; he died of infection on the way to Gallipoli before he could see it turn otherwise. Read it knowing what the poets who followed would answer. From 1914 and Other Poems, 1915."
+  },
+  {
+    "id": "first-fig",
+    "slug": "first-fig",
+    "title": "First Fig",
+    "author": "Edna St. Vincent Millay",
+    "year": 1920,
+    "lines": [
+      "My candle burns at both ends;",
+      "It will not last the night;",
+      "But ah, my foes, and oh, my friends—",
+      "It gives a lovely light!"
+    ],
+    "editorial_note": "Four lines that became the motto of a whole restless decade. Millay knew exactly how reckless it sounded, and meant every word. From A Few Figs from Thistles, 1920."
+  },
+  {
+    "id": "sea-fever",
+    "slug": "sea-fever",
+    "title": "Sea Fever",
+    "author": "John Masefield",
+    "year": 1902,
+    "lines": [
+      "I must go down to the seas again, to the lonely sea and the sky,",
+      "And all I ask is a tall ship and a star to steer her by;",
+      "And the wheel's kick and the wind's song and the white sail's shaking,",
+      "And a grey mist on the sea's face, and a grey dawn breaking."
+    ],
+    "editorial_note": "The pull of the horizon, set to a rhythm that rolls like the swell itself. Masefield had been to sea young, and the longing in it is the real thing. From Salt-Water Ballads, 1902."
+  },
+  {
+    "id": "the-eagle",
+    "slug": "the-eagle",
+    "title": "The Eagle",
+    "author": "Alfred, Lord Tennyson",
+    "year": 1851,
+    "lines": [
+      "He clasps the crag with crooked hands;",
+      "Close to the sun in lonely lands,",
+      "Ring'd with the azure world, he stands.",
+      "The wrinkled sea beneath him crawls;"
+    ],
+    "editorial_note": "A fragment, Tennyson called it, but few whole poems are this tightly made — every hard consonant clamps like a talon. A small one to type slowly. First published 1851."
+  },
+  {
+    "id": "o-captain-my-captain",
+    "slug": "o-captain-my-captain",
+    "title": "O Captain! My Captain!",
+    "author": "Walt Whitman",
+    "year": 1865,
+    "lines": [
+      "O Captain! my Captain! our fearful trip is done,",
+      "The ship has weather'd every rack, the prize we sought is won,",
+      "The port is near, the bells I hear, the people all exulting,",
+      "While follow eyes the steady keel, the vessel grim and daring;"
+    ],
+    "editorial_note": "Whitman's elegy for Lincoln, and the one time this most free of poets reached for rhyme and refrain. He half-regretted its popularity; readers never have. First published 1865."
+  },
+  {
+    "id": "kubla-khan",
+    "slug": "kubla-khan",
+    "title": "Kubla Khan",
+    "author": "Samuel Taylor Coleridge",
+    "year": 1816,
+    "lines": [
+      "In Xanadu did Kubla Khan",
+      "A stately pleasure-dome decree:",
+      "Where Alph, the sacred river, ran",
+      "Through caverns measureless to man"
+    ],
+    "editorial_note": "Coleridge claimed he dreamed the whole poem on opium and lost the rest when a visitor knocked. Fragment or not, the opening is pure incantation. First published 1816."
+  },
+  {
+    "id": "how-do-i-love-thee",
+    "slug": "how-do-i-love-thee",
+    "title": "How Do I Love Thee? (Sonnet 43)",
+    "author": "Elizabeth Barrett Browning",
+    "year": 1850,
+    "lines": [
+      "How do I love thee? Let me count the ways.",
+      "I love thee to the depth and breadth and height",
+      "My soul can reach, when feeling out of sight",
+      "For the ends of being and ideal grace."
+    ],
+    "editorial_note": "Written in secret to Robert Browning during their courtship and slipped to him after they married. The counting never feels dutiful — it feels like wonder. From Sonnets from the Portuguese, 1850.",
+    "day_of_year": 45
+  },
+  {
+    "id": "the-lamb",
+    "slug": "the-lamb",
+    "title": "The Lamb",
+    "author": "William Blake",
+    "year": 1789,
+    "lines": [
+      "Little Lamb, who made thee?",
+      "Dost thou know who made thee?",
+      "Gave thee life, and bid thee feed,",
+      "By the stream and o'er the mead;"
+    ],
+    "editorial_note": "The gentle counterweight to Blake's Tyger — innocence asking the same question experience will later make terrifying. Best typed with both poems in mind. From Songs of Innocence, 1789."
+  },
+  {
+    "id": "annabel-lee",
+    "slug": "annabel-lee",
+    "title": "Annabel Lee",
+    "author": "Edgar Allan Poe",
+    "year": 1849,
+    "lines": [
+      "It was many and many a year ago,",
+      "In a kingdom by the sea,",
+      "That a maiden there lived whom you may know",
+      "By the name of Annabel Lee;"
+    ],
+    "editorial_note": "Poe's last complete poem, a lullaby that turns into a haunting. The sing-song meter is a trap — it makes the grief easier to swallow and harder to forget. First published 1849."
+  },
+  {
+    "id": "a-psalm-of-life",
+    "slug": "a-psalm-of-life",
+    "title": "A Psalm of Life",
+    "author": "Henry Wadsworth Longfellow",
+    "year": 1838,
+    "lines": [
+      "Tell me not, in mournful numbers,",
+      "Life is but an empty dream!",
+      "For the soul is dead that slumbers,",
+      "And things are not what they seem."
+    ],
+    "editorial_note": "The poem that taught a century to make its life sublime. Earnest to its bones — and a useful thing to type on a morning that needs a push. First published 1838."
+  },
+  {
+    "id": "the-world-is-too-much-with-us",
+    "slug": "the-world-is-too-much-with-us",
+    "title": "The World Is Too Much with Us",
+    "author": "William Wordsworth",
+    "year": 1807,
+    "lines": [
+      "The world is too much with us; late and soon,",
+      "Getting and spending, we lay waste our powers;—",
+      "Little we see in Nature that is ours;",
+      "We have given our hearts away, a sordid boon!"
+    ],
+    "editorial_note": "Wordsworth's complaint about busyness and money is older than your phone and twice as sharp. A fitting one for a warm-up that asks you to slow down. From Poems, in Two Volumes, 1807."
+  },
+  {
+    "id": "anthem-for-doomed-youth",
+    "slug": "anthem-for-doomed-youth",
+    "title": "Anthem for Doomed Youth",
+    "author": "Wilfred Owen",
+    "year": 1920,
+    "lines": [
+      "What passing-bells for these who die as cattle?",
+      "Only the monstrous anger of the guns.",
+      "Only the stuttering rifles' rapid rattle",
+      "Can patter out their hasty orisons."
+    ],
+    "editorial_note": "The reply to every poem that called the war glorious — Owen heard church bells in artillery and refused to look away. He was killed a week before the Armistice. Published posthumously, 1920."
+  },
+  {
+    "id": "no-coward-soul-is-mine",
+    "slug": "no-coward-soul-is-mine",
+    "title": "No Coward Soul Is Mine",
+    "author": "Emily Brontë",
+    "year": 1850,
+    "lines": [
+      "No coward soul is mine,",
+      "No trembler in the world's storm-troubled sphere:",
+      "I see Heaven's glories shine,",
+      "And faith shines equal, arming me from fear."
+    ],
+    "editorial_note": "Said to be the last poem Emily Brontë wrote, and a wall of pure conviction. Charlotte published it after her sister's death, calling it her final word. First published 1850."
+  },
+  {
+    "id": "requiem",
+    "slug": "requiem",
+    "title": "Requiem",
+    "author": "Robert Louis Stevenson",
+    "year": 1887,
+    "lines": [
+      "Under the wide and starry sky,",
+      "Dig the grave and let me lie.",
+      "Glad did I live and gladly die,",
+      "And I laid me down with a will."
+    ],
+    "editorial_note": "Stevenson wrote his own epitaph years before he needed it; it's carved on his grave in Samoa. Few poems make peace sound this earned. From Underwoods, 1887."
+  },
+  {
+    "id": "jabberwocky",
+    "slug": "jabberwocky",
+    "title": "Jabberwocky",
+    "author": "Lewis Carroll",
+    "year": 1871,
+    "lines": [
+      "'Twas brillig, and the slithy toves",
+      "Did gyre and gimble in the wabe:",
+      "All mimsy were the borogoves,",
+      "And the mome raths outgrabe."
+    ],
+    "editorial_note": "The greatest nonsense poem in English, and proof that meaning can ride entirely on rhythm and sound. Typing the invented words is its own strange pleasure. From Through the Looking-Glass, 1871."
+  },
+  {
+    "id": "crossing-the-bar",
+    "slug": "crossing-the-bar",
+    "title": "Crossing the Bar",
+    "author": "Alfred, Lord Tennyson",
+    "year": 1889,
+    "lines": [
+      "Sunset and evening star,",
+      "And one clear call for me!",
+      "And may there be no moaning of the bar,",
+      "When I put out to sea,"
+    ],
+    "editorial_note": "Tennyson asked that this always be printed last in his collections, and it usually is — a calm sailing-out written near the end of his life. First published 1889."
+  },
+  {
+    "id": "bright-star",
+    "slug": "bright-star",
+    "title": "Bright Star",
+    "author": "John Keats",
+    "year": 1838,
+    "lines": [
+      "Bright star, would I were stedfast as thou art—",
+      "Not in lone splendour hung aloft the night",
+      "And watching, with eternal lids apart,",
+      "Like nature's patient, sleepless Eremite,"
+    ],
+    "editorial_note": "Keats wanted the star's constancy without its loneliness — to be steadfast and still in love. He copied it into a book of Shakespeare aboard the ship to Italy, where he would die. Published 1838."
+  },
+  {
+    "id": "success-is-counted-sweetest",
+    "slug": "success-is-counted-sweetest",
+    "title": "Success Is Counted Sweetest",
+    "author": "Emily Dickinson",
+    "year": 1890,
+    "lines": [
+      "Success is counted sweetest",
+      "By those who ne'er succeed.",
+      "To comprehend a nectar",
+      "Requires sorest need."
+    ],
+    "editorial_note": "Dickinson's clean little paradox: you understand a thing best by lacking it. One of the few poems published in her lifetime, here in the regularized 1890 edition."
+  },
+  {
+    "id": "the-listeners",
+    "slug": "the-listeners",
+    "title": "The Listeners",
+    "author": "Walter de la Mare",
+    "year": 1912,
+    "lines": [
+      "'Is there anybody there?' said the Traveller,",
+      "Knocking on the moonlit door;",
+      "And his horse in the silence champed the grasses",
+      "Of the forest's ferny floor:"
+    ],
+    "editorial_note": "A whole ghost story compressed into a question no one answers. De la Mare builds the hush so well you start listening too. First published 1912."
+  },
+  {
+    "id": "dreams",
+    "slug": "dreams",
+    "title": "Dreams",
+    "author": "Langston Hughes",
+    "year": 1922,
+    "lines": [
+      "Hold fast to dreams",
+      "For if dreams die",
+      "Life is a broken-winged bird",
+      "That cannot fly."
+    ],
+    "editorial_note": "Eight plain lines that a child can memorize and an adult can't forget. Hughes made the case for holding on without a wasted syllable. First published 1922."
+  },
+  {
+    "id": "if-we-must-die",
+    "slug": "if-we-must-die",
+    "title": "If We Must Die",
+    "author": "Claude McKay",
+    "year": 1919,
+    "lines": [
+      "If we must die, let it not be like hogs",
+      "Hunted and penned in an inglorious spot,",
+      "While round us bark the mad and hungry dogs,",
+      "Making their mock at our accursed lot."
+    ],
+    "editorial_note": "McKay wrote it during the violence of 1919's Red Summer — a sonnet that turns defiance into dignity. Its defiance has been borrowed by the cornered ever since. First published 1919."
+  },
+  {
+    "id": "trees",
+    "slug": "trees",
+    "title": "Trees",
+    "author": "Joyce Kilmer",
+    "year": 1913,
+    "lines": [
+      "I think that I shall never see",
+      "A poem lovely as a tree.",
+      "A tree whose hungry mouth is prest",
+      "Against the earth's sweet flowing breast;"
+    ],
+    "editorial_note": "Sentimental, sincere, and beloved precisely for both — a poem that has outlived every critic who rolled their eyes at it. Kilmer was killed in the war five years later. First published 1913."
+  },
+  {
+    "id": "on-being-brought-from-africa-to-america",
+    "slug": "on-being-brought-from-africa-to-america",
+    "title": "On Being Brought from Africa to America",
+    "author": "Phillis Wheatley",
+    "year": 1773,
+    "lines": [
+      "'Twas mercy brought me from my Pagan land,",
+      "Taught my benighted soul to understand",
+      "That there's a God, that there's a Saviour too:",
+      "Once I redemption neither sought nor knew."
+    ],
+    "editorial_note": "Wheatley was the first African American to publish a book of poetry — enslaved, and writing in a form that turns piety into a quiet argument for her own equality. From Poems on Various Subjects, 1773."
+  }
+]

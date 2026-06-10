@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCorpus } from '../lib/poems';
+
+const { poems } = await getCorpus();
+---
+<BaseLayout
+  title="The Poem Collection — Kindling"
+  description="A curated collection of public-domain poems for your writing warm-up. Type through any of them — free, no signup, no score."
+>
+  <main class="collection">
+    <div class="collection-wrap">
+      <div class="collection-head">
+        <div class="ttl">The Collection</div>
+        <div class="sub">Public-domain poems to warm up on</div>
+        <div class="kprogress" id="kprogress" hidden></div>
+      </div>
+      {poems.map((p) => (
+        <a class="poem-row" href={`/poem/${p.data.slug}`} data-slug={p.data.slug}>
+          <span class="pr-title">{p.data.title}</span><span class="pr-author">{p.data.author}</span>
+          <span class="pr-first">{p.data.lines[0]}</span>
+        </a>
+      ))}
+    </div>
+  </main>
+  <footer class="kfooter solo">
+    <a class="k-open" href="https://lannair.app" target="_blank" rel="noopener">get Lannair →</a>
+  </footer>
+
+  <!-- Check off poems the visitor has finished. Private: reads the same
+       localStorage set the typing surface writes; never sent anywhere. -->
+  <script is:inline>
+    (function () {
+      var done = [];
+      try { done = JSON.parse(localStorage.getItem('kindling_completed') || '[]'); } catch (e) { done = []; }
+      if (!Array.isArray(done)) done = [];
+      var set = {};
+      for (var i = 0; i < done.length; i++) set[done[i]] = true;
+      var rows = document.querySelectorAll('.poem-row');
+      var n = 0;
+      for (var j = 0; j < rows.length; j++) {
+        if (set[rows[j].getAttribute('data-slug')]) { rows[j].classList.add('done'); n++; }
+      }
+      var prog = document.getElementById('kprogress');
+      if (prog && n > 0) {
+        prog.textContent = n + ' of ' + rows.length + ' typed';
+        prog.hidden = false;
+      }
+    })();
+  </script>
+</BaseLayout>

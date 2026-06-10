@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TypingExperience from '../../components/TypingExperience.astro';
+import { getCorpus } from '../../lib/poems';
+
+export async function getStaticPaths() {
+  const { poems } = await getCorpus();
+  return poems.map((p) => ({ params: { slug: p.data.slug } }));
+}
+
+const { slug } = Astro.params;
+const { poems, corpus } = await getCorpus();
+const idx = poems.findIndex((p) => p.data.slug === slug);
+const d = poems[idx].data;
+
+const title = `${d.title} by ${d.author} — Kindling`;
+const description = `Type through '${d.title}' as your writing warm-up. A calm, frictionless way to ease into writing — no score, no pressure.`;
+const canonical = new URL(`/poem/${d.slug}`, Astro.site).href;
+
+// schema.org structured data so search engines treat each poem as a rich,
+// free-to-read creative work attributed to its author.
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: d.title,
+  genre: 'Poem',
+  author: { '@type': 'Person', name: d.author },
+  datePublished: String(d.year),
+  description: d.editorial_note,
+  inLanguage: 'en',
+  isAccessibleForFree: true,
+  isFamilyFriendly: true,
+  url: canonical,
+  publisher: { '@type': 'Organization', name: 'Kindling' },
+};
+---
+<BaseLayout title={title} description={description} ogType="article">
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonld)} is:inline></script>
+  <TypingExperience corpus={corpus} firstIndex={idx}>
+    <div class="k-prelude" id="prelude">
+      <div class="kp-title">{d.title}</div>
+      <div class="kp-meta">{d.author} · {d.year}</div>
+      <p class="kp-note">{d.editorial_note}</p>
+    </div>
+  </TypingExperience>
+</BaseLayout>

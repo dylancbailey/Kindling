@@ -1,0 +1,643 @@
+/* ═══════════════════════════════════════════════════════════
+   Kindling — page styles
+   Tokens lifted from Lannair (src/styles.css) so the page reads as
+   the same world as the app. In `tauri dev` the real licensed
+   LT Saeada loads from ../assets/font; in a bare browser it falls
+   back to the system rounded stack (the Phase-4 font gate).
+   ═══════════════════════════════════════════════════════════ */
+:root {
+  --bg:         #171717;
+  --text:       #f5f5f5;
+  --text-dim:   rgba(245, 245, 245, 0.15);
+  --ember:      #c98a52;
+  --ember-glow: #c98a528c;
+  --pomo:       #8a5a34;
+  --sdot-empty: rgba(245, 245, 245, 0.15);
+  --caret:      rgba(245, 245, 245, 0.55);
+  --font: "LT Saeada", ui-rounded, "SF Pro Rounded", system-ui, -apple-system, sans-serif;
+
+  /* The centered frame, lifted from Lannair's fullscreen writing band: a 900px
+     column with 115px side insets → a ~670px measure. Poem AND all chrome
+     (top bar, footer) align to this band; the canvas fills the gutters. */
+  --frame:       900px;
+  --frame-inset: 115px;
+  --measure:     670px;
+}
+
+/* On narrow viewports the 115px insets are too heavy — relax them. */
+@media (max-width: 700px) {
+  :root { --frame-inset: 24px; }
+}
+
+/* The four LT Saeada weights the app ships. Relative to src/kindle/, the
+   woff2 live in ../assets/font. Phase 4 will inline/swap for the standalone
+   single file behind the webfont-license gate. */
+@font-face {
+  font-family: "LT Saeada"; font-weight: 400; font-style: normal; font-display: swap;
+  src: url("/fonts/LTSaeada-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "LT Saeada"; font-weight: 500; font-style: normal; font-display: swap;
+  src: url("/fonts/LTSaeada-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "LT Saeada"; font-weight: 600; font-style: normal; font-display: swap;
+  src: url("/fonts/LTSaeada-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "LT Saeada"; font-weight: 700; font-style: normal; font-display: swap;
+  src: url("/fonts/LTSaeada-Bold.woff2") format("woff2");
+}
+
+* { box-sizing: border-box; }
+
+/* View transitions: keep client-side routing (no full reload) but make the page
+   swap INSTANT — no root cross-fade. Otherwise the cross-fade composites a
+   snapshot of the incoming page over the poem's own materialize, so the words
+   appear to fade in, snap to 0, and fade in again. Instant swap = the materialize
+   is the only motion, which is also the snappy page-to-page feel we want. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+/* Hide the outgoing snapshot entirely so the incoming page shows the instant the
+   DOM swaps — no lingering frame of the previous page held over the new one. */
+::view-transition-old(root) { opacity: 0; }
+::view-transition-new(root) { opacity: 1; }
+
+html, body {
+  margin: 0; height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+#stage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* ── The poem surface ─────────────────────────────────────── */
+/* The poem is laid out in its REAL lines, centered. Every line exists from the
+   first frame (so the block is full-sized and stably centered — nothing
+   reflows), but un-reached lines are hidden and MATERIALIZE as you arrive. */
+.ticker {
+  width: min(var(--measure), calc(100% - 2 * var(--frame-inset)));
+  text-align: center;
+  line-height: 1.7;
+  font-size: 34px;             /* base; the engine scales this down to fit long lines */
+}
+
+.kline {
+  font-size: 1em;              /* inherits the (possibly auto-fit) ticker size */
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  white-space: nowrap;         /* a poem line never wraps — auto-fit shrinks instead */
+  /* materialize: a hidden line fades + lifts into place when revealed */
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.kline.revealed { opacity: 1; transform: translateY(0); }
+
+/* On navigation the first poem is revealed instantly (no fade-from-blank flicker);
+   the engine adds .kinstant for two frames, then removes it so the rest animates. */
+.ticker.kinstant .kline { transition: none; }
+
+.kw { white-space: pre; }
+.kgap { white-space: pre; }
+
+/* untyped glyphs sit dim; each lights to full ink the moment it's typed and
+   STAYS lit — so a finished line reads as fully illuminated, and the whole poem
+   is bright in front of you at the end. */
+.kc {
+  color: rgba(245, 245, 245, 0.26);
+  transition: color 0.3s ease;
+}
+.kc.lit { color: var(--text); }
+
+/* wrong key → a small ember shake + flash on the expected glyph (or the caret
+   when a space was due). A nudge, never a penalty; settles straight back. */
+.kc.miss, .kcaret.miss {
+  animation: kc-miss 0.26s ease;
+  color: var(--ember);
+}
+@keyframes kc-miss {
+  0%, 100% { transform: translateX(0); }
+  18% { transform: translateX(-3px); }
+  40% { transform: translateX(3px); }
+  62% { transform: translateX(-2px); }
+  82% { transform: translateX(2px); }
+}
+
+/* the ember caret — the only thing that moves while a word is being typed */
+.kcaret {
+  display: inline-block;
+  width: 2px;
+  height: 0.92em;
+  margin: 0 0.01em;
+  vertical-align: baseline;
+  transform: translateY(0.08em);
+  background: var(--ember);
+  box-shadow: 0 0 7px var(--ember-glow);
+  border-radius: 1px;
+  animation: kcaret-blink 1.1s steps(1) infinite;
+}
+@keyframes kcaret-blink {
+  0%, 60% { opacity: 1; }
+  61%, 100% { opacity: 0.25; }
+}
+
+/* soft beat at passage end — the whole illuminated poem fades before the next */
+.ticker.passage-done { opacity: 0; transition: opacity 0.5s ease; }
+
+.attrib {
+  margin-top: 22px;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: rgba(245, 245, 245, 0.28);
+  min-height: 1.2em;
+  user-select: none;
+  opacity: 0;                       /* author stays hidden while typing */
+  transition: opacity 0.6s ease;
+}
+.attrib.show { opacity: 1; }        /* fades in when the poem is finished */
+
+.hint {
+  margin-top: 40px;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: var(--ember);                 /* ember, so the cue draws the eye */
+  text-shadow: 0 0 8px var(--ember-glow);
+  user-select: none;
+  transition: opacity 0.6s ease;       /* fade IN (e.g. a new poem's cue) */
+}
+/* Fade OUT (when typing begins) is slower + gentler, so the cue drifts away
+   rather than snapping off. The destination state owns this transition. */
+.hint.gone { opacity: 0; transition: opacity 1.6s ease; }
+
+/* ── Background curtain ───────────────────────────────────── */
+/* Sits above the chrome (z6) and content but below the intro flame (z10): it
+   covers the page during the intro and on navigation, then fades away. Starts
+   covering on load; JS reveals it once the page is ready. */
+#curtain {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 9;
+  opacity: 0;                 /* hidden by default → navigations never cover (no flash) */
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  #curtain { transition: opacity 0.2s ease; }
+}
+
+/* ── One-time intro bloom ─────────────────────────────────── */
+#intro {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 10;
+  color: var(--ember);                 /* the flame inherits this via currentColor */
+}
+#intro.done { display: none; }
+#intro-flame {
+  opacity: 0;
+  animation: kindle-intro 2.6s ease forwards;
+}
+@keyframes kindle-intro {
+  0%   { opacity: 0; transform: scale(0.55); filter: drop-shadow(0 0 0 transparent); }
+  22%  { opacity: 1; transform: scale(1.12); filter: drop-shadow(0 0 30px var(--ember-glow)); } /* bloom peak */
+  38%  { opacity: 1; transform: scale(1.0);  filter: drop-shadow(0 0 15px var(--ember-glow)); } /* settle */
+  68%  { opacity: 1; transform: scale(1.0);  filter: drop-shadow(0 0 11px var(--ember-glow)); } /* hold */
+  100% { opacity: 0; transform: scale(1.0);  filter: drop-shadow(0 0 0 transparent); }          /* fade out */
+}
+
+/* ── The pinned footer ────────────────────────────────────── */
+/* Three slots on a centred grid, all vertically centred so the row reads even:
+   Lv bar (left) · get Lannair (centre, greyed so it doesn't pull the eye) ·
+   save-as-image (right, appears on completion). */
+.kfooter {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);          /* reliably centre the band */
+  width: min(100%, var(--frame));
+  display: grid;
+  /* minmax(0,1fr) forces the side columns equal even when their contents differ
+     (Lv bar vs the empty/hidden save slot), so the centre item is truly centred */
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: start;                    /* line up with the top row (the Lv label) */
+  padding: 0 var(--frame-inset) 16px;   /* align to the measure edges */
+  box-sizing: border-box;
+  pointer-events: none;        /* never blocks the typing surface */
+}
+.kfooter > * { pointer-events: auto; }
+.kbar { justify-self: start; }
+.k-open { justify-self: center; }
+.ksave { justify-self: end; }
+
+/* lone footer (just the centred link, e.g. /poems) */
+.kfooter.solo { display: flex; justify-content: center; }
+
+.kbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.k-track {
+  width: 120px; height: 4px;
+  border-radius: 3px;
+  background: var(--sdot-empty);
+  overflow: hidden;
+}
+.k-track.pop { animation: k-track-pop 0.2s ease-out; }
+@keyframes k-track-pop {
+  0%   { transform: scaleY(1);    box-shadow: 0 0 0 0 rgba(0,0,0,0); }
+  40%  { transform: scaleY(1.25); box-shadow: 0 0 3px 0 var(--ember-glow); }
+  100% { transform: scaleY(1);    box-shadow: 0 0 0 0 rgba(0,0,0,0); }
+}
+.k-fill {
+  height: 100%; width: 0;
+  border-radius: 3px;
+  background: var(--pomo);
+  box-shadow: 0 0 5px 0 var(--ember-glow);
+  transition: width 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.k-fill.no-ease { transition: none; }
+.k-level {
+  font-family: var(--font);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--pomo);
+  opacity: 0.85;
+  transform-origin: center;
+  user-select: none;
+}
+.k-level.bloom { animation: k-level-bloom 0.55s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@keyframes k-level-bloom {
+  0%   { transform: scale(0.7);  opacity: 0.4; }
+  55%  { transform: scale(1.22); opacity: 1;   }
+  100% { transform: scale(1);    opacity: 0.85; }
+}
+
+.k-open {
+  font-family: var(--font);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: rgba(245, 245, 245, 0.26);   /* greyed — present but never grabs the eye */
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+.k-open:hover { color: rgba(245, 245, 245, 0.5); }
+
+/* ── Reduced motion: calm static fallback ─────────────────── */
+/* Lines still reveal (opacity only, no lift); the wrong-key nudge becomes a
+   still ember flash instead of a shake; the caret holds steady. */
+@media (prefers-reduced-motion: reduce) {
+  .kline { transform: none; transition: opacity 0.4s ease; }
+  .kline.revealed { transform: none; }
+  .kc { transition: color 0.2s ease; }
+  .kc.miss, .kcaret.miss { animation: none; color: var(--ember); transform: none; }
+  .kcaret { animation: none; opacity: 1; }
+  .k-fill { transition: none; }
+  .k-track.pop, .k-level.bloom { animation: none; }
+  .ticker.passage-done { transition: none; }
+  /* intro: a plain fade in/out, no scale or glow pulse */
+  #intro-flame { animation: kindle-intro-rm 1.8s ease forwards; }
+  @keyframes kindle-intro-rm {
+    0% { opacity: 0; } 30% { opacity: 1; } 70% { opacity: 1; } 100% { opacity: 0; }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Phase 3 — route-specific chrome (poem pages, /today, /poems)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Editorial prelude (poem pages) ───────────────────────── */
+/* Title / author · year + the curatorial note, shown as a quiet header before
+   typing begins. Real crawlable prose (good for SEO); pointer-events:none so it
+   never blocks the typing surface; fades away on the first keystroke. */
+.k-prelude {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 28px 24px 0;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 0.6s ease;
+}
+.k-prelude.gone { opacity: 0; }
+.k-prelude .kp-title {
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: var(--ember);
+  opacity: 0.85;
+}
+.k-prelude .kp-meta {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: rgba(245, 245, 245, 0.3);
+  margin-top: 3px;
+}
+.k-prelude .kp-note {
+  max-width: 560px;
+  margin: 12px auto 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(245, 245, 245, 0.34);
+}
+
+/* ── Dated caption (/today) ───────────────────────────────── */
+.kdate {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 28px 24px 0;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: rgba(245, 245, 245, 0.3);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── The collection index (/poems) ────────────────────────── */
+.collection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+}
+.collection-wrap { width: min(680px, 92vw); }
+.collection-head {
+  text-align: center;
+  margin-bottom: 38px;
+}
+.collection-head .ttl {
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  opacity: 0.9;
+}
+.collection-head .sub {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: rgba(245, 245, 245, 0.3);
+  margin-top: 8px;
+}
+.poem-row {
+  display: block;
+  text-decoration: none;
+  padding: 15px 8px;
+  border-bottom: 1px solid rgba(245, 245, 245, 0.06);
+}
+.poem-row .pr-title {
+  font-size: 19px;
+  color: var(--text);
+  opacity: 0.86;
+  transition: color 0.2s ease;
+}
+.poem-row .pr-author {
+  font-size: 14px;
+  color: rgba(245, 245, 245, 0.3);
+  margin-left: 8px;
+}
+.poem-row .pr-first {
+  display: block;
+  font-size: 14px;
+  color: var(--ember);
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.25s ease, max-height 0.25s ease, margin-top 0.25s ease;
+}
+.poem-row:hover .pr-title,
+.poem-row:focus-visible .pr-title { color: var(--ember); }
+.poem-row:hover .pr-first,
+.poem-row:focus-visible .pr-first {
+  opacity: 0.55;
+  max-height: 2.4em;
+  margin-top: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .k-prelude { transition: opacity 0.3s ease; }
+  .poem-row .pr-first { transition: opacity 0.15s ease; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Add-ons — top nav, completed check-offs, progress
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Top bar: calendar+date · ember · poems (aligned to the band) ── */
+/* Persistent icon chrome (like the app's flame). Three slots on a centred grid
+   so the ember stays dead-centre regardless of the side widths; the whole bar is
+   capped to the frame, so the calendar sits at the poem's left edge and the
+   poems link at its right edge. */
+.ktop {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, var(--frame));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  padding: 16px var(--frame-inset) 0;
+  box-sizing: border-box;
+  z-index: 6;
+  pointer-events: none;
+}
+.ktop > * { pointer-events: auto; }
+.ktop-left  { justify-self: start; }
+.ktop-center { justify-self: center; }
+.ktop-right { justify-self: end; }
+
+/* calendar + MM/DD, stacked, at the left edge of the measure */
+.ktop-cal {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: rgba(245, 245, 245, 0.42);
+  transition: color 0.5s ease;        /* eases back to grey when today's poem is done */
+}
+.ktop-cal svg { width: 18px; height: 18px; display: block; }
+.ktop-date {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.5s ease;
+}
+
+/* the persistent ember flame, centre */
+.ktop-ember {
+  color: var(--ember);
+  display: block;
+  line-height: 0;
+  transition: filter 0.25s ease;
+}
+.ktop-ember svg { width: 26px; height: 26px; display: block; }
+.ktop-ember:hover { filter: drop-shadow(0 0 8px var(--ember-glow)); }
+
+/* the quiet poems link, right edge */
+.ktop-link {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(245, 245, 245, 0.42);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.ktop-link svg { width: 20px; height: 20px; display: block; }
+.ktop-link:hover { color: var(--ember); }
+.ktop-link.current { color: var(--ember); }
+
+/* the prelude / dated caption sit just below the top bar */
+.k-prelude { padding-top: 64px; }
+.kdate { padding-top: 64px; }
+
+/* ── Completed check-offs + progress (/poems) ─────────────── */
+.poem-row.done .pr-title::after {
+  content: "✓";
+  margin-left: 9px;
+  color: var(--ember);
+  font-size: 0.78em;
+  opacity: 0.85;
+  vertical-align: 1px;
+}
+.poem-row.done .pr-title { color: rgba(245, 245, 245, 0.55); }
+.kprogress {
+  margin-top: 12px;
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  color: var(--ember);
+  opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ktop-ember { transition: none; }
+}
+
+/* ── Save-as-image affordance (footer right slot) ─────────── */
+/* Lives in the bottom-right of the band, aligned with the rest of the footer.
+   Hidden until a poem is finished, then fades in quietly; brightens on hover. */
+.ksave {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto; height: 30px;
+  padding: 0 2px;
+  border: none;
+  background: transparent;
+  color: rgba(245, 245, 245, 0.4);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, color 0.2s ease;
+}
+.ksave.show { opacity: 1; pointer-events: auto; }
+.ksave:hover { color: var(--ember); }
+.ksave svg { height: 16px; width: auto; display: block; }
+
+/* ═══════════════════════════════════════════════════════════
+   Today's poem — eyebrow, 2× bonus marker, lit calendar
+   ═══════════════════════════════════════════════════════════ */
+
+/* Eyebrow above the poem on the home (today) page: "TODAY'S POEM · JUN 10".
+   Only occupies space when active; fades out the moment typing begins. */
+.keyebrow {
+  display: none;
+  margin: 0 0 18px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ember);
+  text-shadow: 0 0 8px var(--ember-glow);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  user-select: none;
+}
+.keyebrow.show { display: block; opacity: 0.9; }
+.keyebrow.gone { display: block; opacity: 0; transition: opacity 1.2s ease; }
+
+/* The Lv label + the 2× bonus marker (shown only while typing today's poem). */
+.k-levelrow {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+}
+.k-mult {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ember);
+  text-shadow: 0 0 7px var(--ember-glow);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.k-mult.show { opacity: 0.95; }
+
+/* Lit calendar while today's poem is active: icon + date glow ember + label.
+   When the user cycles off today's poem, the engine removes .today and these
+   ease back to muted grey / fade the label out. */
+.ktop-cal.today { color: var(--ember); }
+.ktop-cal.today .ktop-date { color: var(--ember); }
+.ktop-todaylabel {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--ember);
+  opacity: 0;                         /* hidden unless the calendar is in 'today' state */
+  transition: opacity 0.5s ease;
+}
+.ktop-cal.today .ktop-todaylabel { opacity: 0.8; }
+
+/* ── Themed 404 ───────────────────────────────────────────── */
+.notfound {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px;
+  text-align: center;
+}
+.nf-flame {
+  color: var(--ember);
+  opacity: 0.55;
+  line-height: 0;
+  filter: drop-shadow(0 0 12px var(--ember-glow));
+}
+.nf-flame svg { width: 56px; height: 56px; display: block; }
+.nf-code {
+  margin: 6px 0 0;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  color: rgba(245, 245, 245, 0.3);
+}
+.nf-msg {
+  margin: 0;
+  font-size: 22px;
+  color: var(--text);
+  opacity: 0.85;
+}
+.nf-home {
+  margin-top: 10px;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: var(--ember);
+  opacity: 0.7;
+  text-decoration: none;
+  transition: opacity 0.2s ease, text-shadow 0.2s ease;
+}
+.nf-home:hover { opacity: 1; text-shadow: 0 0 8px var(--ember-glow); }
