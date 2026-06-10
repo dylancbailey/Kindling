@@ -641,3 +641,41 @@ html, body {
   transition: opacity 0.2s ease, text-shadow 0.2s ease;
 }
 .nf-home:hover { opacity: 1; text-shadow: 0 0 8px var(--ember-glow); }
+
+/* ── Mobile / touch gate ──────────────────────────────────── */
+/* Kindling is a typing experience; on keyboard-less touch devices we show a
+   full-screen note instead of the (unusable) typing surface. Shown from first
+   paint via the media query; the layout's script hides it if a key is pressed. */
+#mobile-gate { display: none; }
+@media (pointer: coarse) and (hover: none) {
+  #mobile-gate {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 100;            /* above everything, incl. curtain (9) and intro (10) */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 32px;
+    text-align: center;
+    background: var(--bg);
+  }
+}
+.mg-icon { color: var(--ember); opacity: 0.85; line-height: 0; }
+.mg-icon svg { width: 58px; height: 58px; display: block; }
+.mg-msg {
+  margin: 0;
+  font-size: 19px;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  opacity: 0.92;
+}
+.mg-sub {
+  margin: 0;
+  max-width: 300px;
+  font-size: 14px;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  color: rgba(245, 245, 245, 0.4);
+}

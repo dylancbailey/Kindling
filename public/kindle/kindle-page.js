@@ -398,32 +398,10 @@
       firstPending = null;
     }
 
-    // Keyboard-less devices: a still, fully-lit poem + a quiet note. If a real
-    // keyboard turns out to be present, the first keypress upgrades to typing.
-    var coarse = window.matchMedia &&
-      window.matchMedia("(pointer: coarse)").matches &&
-      !window.matchMedia("(any-pointer: fine)").matches;
-    if (coarse) {
-      var p = nextPassage();
-      currentPoem = p; currentSlug = p.slug || null;
-      if (attribEl) { attribEl.textContent = p.attribution ? "— " + p.attribution : ""; attribEl.classList.add("show"); }
-      if (introEl) introEl.classList.add("done");
-      staticRender(p);
-      showHint("Kindling works best with a keyboard.");
-      reveal();   // touch fallback: poem is on screen, lift the curtain
-      upgradeHandler = function (e) {
-        if (e.key && e.key.length === 1) {
-          window.removeEventListener("keydown", upgradeHandler);
-          upgradeHandler = null;
-          // restart this same poem in interactive mode
-          firstPending = CORPUS.indexOf(p);
-          startInteractive();
-        }
-      };
-      window.addEventListener("keydown", upgradeHandler);
-      return;
-    }
-
+    // Touch/mobile devices get the full-screen "use a laptop or desktop" gate
+    // (CSS, in the layout). The engine still runs the normal interactive surface
+    // behind it, so a touch device WITH a keyboard just works once the gate is
+    // dismissed on first keypress.
     startInteractive();
   }
 
