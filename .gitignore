@@ -1,0 +1,8 @@
+# build output + deps (Cloudflare builds these fresh)
+dist/
+node_modules/
+.astro/
+
+# os / editor cruft
+.DS_Store
+*.log
