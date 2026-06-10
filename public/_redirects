@@ -1,0 +1,9 @@
+# Cloudflare Pages redirects (evaluated before static files).
+
+# Crawlers conventionally probe /sitemap.xml; ours is emitted as the sitemap index.
+/sitemap.xml      /sitemap-index.xml   301
+
+# Home is the poem of the day, so /today is redundant — proper 301 to the root
+# (cleaner than the meta-refresh fallback Astro also emits).
+/today            /                    301
+/today/           /                    301
