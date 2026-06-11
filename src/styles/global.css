@@ -647,7 +647,11 @@ html, body {
    full-screen note instead of the (unusable) typing surface. Shown from first
    paint via the media query; the layout's script hides it if a key is pressed. */
 #mobile-gate { display: none; }
-@media (pointer: coarse) and (hover: none) {
+/* Only true touch devices with NO hover-capable input anywhere (i.e. no mouse or
+   trackpad). `any-hover: none` is the key: a touchscreen laptop still has a
+   trackpad, so it reports `any-hover: hover` and is correctly excluded — unlike
+   `hover: none`, which only checks the primary pointer and false-positives them. */
+@media (pointer: coarse) and (any-hover: none) {
   #mobile-gate {
     display: flex;
     position: fixed;

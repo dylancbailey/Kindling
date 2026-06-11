@@ -109,8 +109,19 @@ const flame = 'M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.
       // doesn't bleed through. It is NOT used for navigation — layering it over
       // Astro's view transitions made every element flash. Navigations are instant.
       function reveal() { var c = document.getElementById('curtain'); if (c) c.style.opacity = '0'; }
+      // Safety net for the mobile gate: if ANY precise pointer exists (a mouse or
+      // trackpad), this is a laptop/desktop — including touchscreen ones — so never
+      // gate it, even if the CSS query somehow matched. Belt-and-suspenders against
+      // false positives, which would lock real desktop users out.
+      function gateGuard() {
+        if (window.matchMedia && window.matchMedia('(any-pointer: fine)').matches) {
+          var g = document.getElementById('mobile-gate');
+          if (g) g.style.display = 'none';
+        }
+      }
       function settle() {
         fillDate();
+        gateGuard();
         if (!document.getElementById('ticker')) reveal();   // non-typing page: reveal once loaded
         setTimeout(reveal, 3500);                            // safety: never leave the curtain stuck
       }
@@ -140,6 +151,7 @@ const flame = 'M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.
       }
 
       fillDate();
+      gateGuard();   // run immediately too, so desktops never even flash the gate
     })();
   </script>
   <slot />
