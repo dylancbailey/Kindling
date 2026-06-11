@@ -703,5 +703,703 @@
       "Once I redemption neither sought nor knew."
     ],
     "editorial_note": "Wheatley was the first African American to publish a book of poetry — enslaved, and writing in a form that turns piety into a quiet argument for her own equality. From Poems on Various Subjects, 1773."
+  },
+  {
+    "id": "ode-on-a-grecian-urn",
+    "slug": "ode-on-a-grecian-urn",
+    "title": "Ode on a Grecian Urn",
+    "author": "John Keats",
+    "year": 1820,
+    "lines": [
+      "Thou still unravish'd bride of quietness,",
+      "Thou foster-child of silence and slow time,",
+      "Sylvan historian, who canst thus express",
+      "A flowery tale more sweetly than our rhyme:"
+    ],
+    "editorial_note": "Keats addresses an urn as if it could answer, and that one-sided intimacy is the whole ache of the poem. Typing the opening apostrophe lets the long vowels slow your hands the way the marble slows time. Text follows the 1820 Lamia volume."
+  },
+  {
+    "id": "la-belle-dame-sans-merci",
+    "slug": "la-belle-dame-sans-merci",
+    "title": "La Belle Dame sans Merci",
+    "author": "John Keats",
+    "year": 1820,
+    "lines": [
+      "O what can ail thee, knight-at-arms,",
+      "Alone and palely loitering?",
+      "The sedge has wither'd from the lake,",
+      "And no birds sing."
+    ],
+    "editorial_note": "A ballad that turns enchantment into dread in four short stanzas. The clipped final line lands like a held breath. Text follows the 1820 version Keats published in the Indicator."
+  },
+  {
+    "id": "ode-to-the-west-wind",
+    "slug": "ode-to-the-west-wind",
+    "title": "Ode to the West Wind",
+    "author": "Percy Bysshe Shelley",
+    "year": 1820,
+    "lines": [
+      "O wild West Wind, thou breath of Autumn's being,",
+      "Thou, from whose unseen presence the leaves dead",
+      "Are driven, like ghosts from an enchanter fleeing,",
+      "Yellow, and black, and pale, and hectic red,"
+    ],
+    "editorial_note": "Shelley wrote this in a wood near Florence as a storm gathered, and the lines still move like weather. The list of colours in the fourth line is a small inventory of decay. Text follows the 1820 Prometheus Unbound volume."
+  },
+  {
+    "id": "london",
+    "slug": "london",
+    "title": "London",
+    "author": "William Blake",
+    "year": 1794,
+    "lines": [
+      "I wander thro' each charter'd street,",
+      "Near where the charter'd Thames does flow,",
+      "And mark in every face I meet",
+      "Marks of weakness, marks of woe."
+    ],
+    "editorial_note": "Blake repeats 'charter'd' and 'mark' until the words feel like manacles, which is the point. A short walk through the city becomes an indictment of it. Text follows Songs of Experience, 1794."
+  },
+  {
+    "id": "the-rime-of-the-ancient-mariner",
+    "slug": "the-rime-of-the-ancient-mariner",
+    "title": "The Rime of the Ancient Mariner",
+    "author": "Samuel Taylor Coleridge",
+    "year": 1798,
+    "lines": [
+      "It is an ancient Mariner,",
+      "And he stoppeth one of three.",
+      "'By thy long grey beard and glittering eye,",
+      "Now wherefore stopp'st thou me?"
+    ],
+    "editorial_note": "The poem opens by grabbing a wedding guest, and the reader, by the sleeve. That glittering eye is the first sign you will not be let go. Text follows the Lyrical Ballads, 1798."
+  },
+  {
+    "id": "so-well-go-no-more-a-roving",
+    "slug": "so-well-go-no-more-a-roving",
+    "title": "So We'll Go No More a Roving",
+    "author": "Lord Byron",
+    "year": 1830,
+    "lines": [
+      "So, we'll go no more a roving",
+      "So late into the night,",
+      "Though the heart be still as loving,",
+      "And the moon be still as bright."
+    ],
+    "editorial_note": "Byron sent these lines in a letter at twenty-eight, already weary of his own revels. The tenderness is in the things that stay bright while he stops. Text follows the 1830 Letters and Journals, where Thomas Moore first printed it."
+  },
+  {
+    "id": "composed-upon-westminster-bridge",
+    "slug": "composed-upon-westminster-bridge",
+    "title": "Composed upon Westminster Bridge",
+    "author": "William Wordsworth",
+    "year": 1807,
+    "lines": [
+      "Earth has not anything to show more fair:",
+      "Dull would he be of soul who could pass by",
+      "A sight so touching in its majesty:",
+      "This City now doth, like a garment, wear"
+    ],
+    "editorial_note": "The great poet of mountains and lakes is stopped cold by London at dawn. The city is beautiful precisely because it is, for once, asleep and still. Text follows Poems, in Two Volumes, 1807."
+  },
+  {
+    "id": "dover-beach",
+    "slug": "dover-beach",
+    "title": "Dover Beach",
+    "author": "Matthew Arnold",
+    "year": 1867,
+    "lines": [
+      "The sea is calm to-night.",
+      "The tide is full, the moon lies fair",
+      "Upon the straits; on the French coast the light",
+      "Gleams and is gone; the cliffs of England stand,"
+    ],
+    "editorial_note": "Arnold begins with a honeymoon view and slides, almost imperceptibly, toward the loss of faith. The light that gleams and is gone is the whole argument in miniature. Text follows New Poems, 1867."
+  },
+  {
+    "id": "home-thoughts-from-abroad",
+    "slug": "home-thoughts-from-abroad",
+    "title": "Home-Thoughts, from Abroad",
+    "author": "Robert Browning",
+    "year": 1845,
+    "lines": [
+      "Oh, to be in England",
+      "Now that April's there,",
+      "And whoever wakes in England",
+      "Sees, some morning, unaware,"
+    ],
+    "editorial_note": "Homesickness rendered as a precise botanical longing for a specific month. Browning wrote it from Italy, which makes the ache earned. Text follows Dramatic Romances and Lyrics, 1845."
+  },
+  {
+    "id": "ulysses",
+    "slug": "ulysses",
+    "title": "Ulysses",
+    "author": "Alfred, Lord Tennyson",
+    "year": 1842,
+    "lines": [
+      "It little profits that an idle king,",
+      "By this still hearth, among these barren crags,",
+      "Match'd with an aged wife, I mete and dole",
+      "Unequal laws unto a savage race,"
+    ],
+    "editorial_note": "An old hero refuses to settle into retirement, and the restlessness is half-noble, half-selfish. Tennyson wrote it grieving a friend, which gives the striving its grief. Text follows Poems, 1842."
+  },
+  {
+    "id": "the-charge-of-the-light-brigade",
+    "slug": "the-charge-of-the-light-brigade",
+    "title": "The Charge of the Light Brigade",
+    "author": "Alfred, Lord Tennyson",
+    "year": 1854,
+    "lines": [
+      "Half a league, half a league,",
+      "Half a league onward,",
+      "All in the valley of Death",
+      "Rode the six hundred."
+    ],
+    "editorial_note": "The galloping metre carries you forward exactly as the order carried the men, whether or not it made sense. Repetition becomes momentum becomes doom. Text follows the 1854 printing in the Examiner."
+  },
+  {
+    "id": "to-his-coy-mistress",
+    "slug": "to-his-coy-mistress",
+    "title": "To His Coy Mistress",
+    "author": "Andrew Marvell",
+    "year": 1681,
+    "lines": [
+      "Had we but world enough, and time,",
+      "This coyness, lady, were no crime.",
+      "We would sit down, and think which way",
+      "To walk, and pass our long love's day."
+    ],
+    "editorial_note": "The most charming bad argument in English, mounting a syllogism in favour of seizing the day. The wit only sharpens once mortality enters the room. Text follows the posthumous Miscellaneous Poems, 1681."
+  },
+  {
+    "id": "to-the-virgins-to-make-much-of-time",
+    "slug": "to-the-virgins-to-make-much-of-time",
+    "title": "To the Virgins, to Make Much of Time",
+    "author": "Robert Herrick",
+    "year": 1648,
+    "lines": [
+      "Gather ye rosebuds while ye may,",
+      "Old Time is still a-flying;",
+      "And this same flower that smiles to-day",
+      "To-morrow will be dying."
+    ],
+    "editorial_note": "The carpe diem poem so distilled that its first line became a proverb. Herrick's lightness is the sugar on a genuinely dark pill. Text follows Hesperides, 1648."
+  },
+  {
+    "id": "the-passionate-shepherd-to-his-love",
+    "slug": "the-passionate-shepherd-to-his-love",
+    "title": "The Passionate Shepherd to His Love",
+    "author": "Christopher Marlowe",
+    "year": 1599,
+    "lines": [
+      "Come live with me and be my love,",
+      "And we will all the pleasures prove",
+      "That valleys, groves, hills, and fields,",
+      "Woods, or steepy mountain yields."
+    ],
+    "editorial_note": "Pastoral seduction at its most golden, promising a world where it is always spring. Marlowe never lets reality, or rent, intrude. Text follows the 1599 printing in The Passionate Pilgrim."
+  },
+  {
+    "id": "song-to-celia",
+    "slug": "song-to-celia",
+    "title": "Song: To Celia",
+    "author": "Ben Jonson",
+    "year": 1616,
+    "lines": [
+      "Drink to me only with thine eyes,",
+      "And I will pledge with mine;",
+      "Or leave a kiss but in the cup,",
+      "And I'll not look for wine."
+    ],
+    "editorial_note": "Jonson builds a whole courtship out of glances and a shared cup, no wine required. It became a song precisely because the lines already hum. Text follows The Forest in his Works, 1616."
+  },
+  {
+    "id": "virtue",
+    "slug": "virtue",
+    "title": "Virtue",
+    "author": "George Herbert",
+    "year": 1633,
+    "lines": [
+      "Sweet day, so cool, so calm, so bright,",
+      "The bridal of the earth and sky;",
+      "The dew shall weep thy fall to-night;",
+      "For thou must die."
+    ],
+    "editorial_note": "Herbert praises the day, the rose, the spring, then quietly buries each one. The blunt refrain 'thou must die' is the hinge the whole poem turns on. Text follows The Temple, 1633."
+  },
+  {
+    "id": "on-his-blindness",
+    "slug": "on-his-blindness",
+    "title": "On His Blindness",
+    "author": "John Milton",
+    "year": 1673,
+    "lines": [
+      "When I consider how my light is spent,",
+      "Ere half my days, in this dark world and wide,",
+      "And that one talent which is death to hide",
+      "Lodged with me useless, though my soul more bent"
+    ],
+    "editorial_note": "Milton, going blind, wrestles with whether God still wants his work, and arrives at patience. The famous resolution comes only after this anxious opening. Text follows the 1673 Poems."
+  },
+  {
+    "id": "elegy-written-in-a-country-churchyard",
+    "slug": "elegy-written-in-a-country-churchyard",
+    "title": "Elegy Written in a Country Churchyard",
+    "author": "Thomas Gray",
+    "year": 1751,
+    "lines": [
+      "The curfew tolls the knell of parting day,",
+      "The lowing herd wind slowly o'er the lea,",
+      "The ploughman homeward plods his weary way,",
+      "And leaves the world to darkness and to me."
+    ],
+    "editorial_note": "Gray turns an evening in a village graveyard into a meditation on every unrecorded life. The opening lines lower the light by degrees. Text follows the 1751 first edition."
+  },
+  {
+    "id": "sonnet-75-one-day-i-wrote-her-name",
+    "slug": "sonnet-75-one-day-i-wrote-her-name",
+    "title": "Sonnet 75 (One Day I Wrote Her Name)",
+    "author": "Edmund Spenser",
+    "year": 1595,
+    "lines": [
+      "One day I wrote her name upon the strand,",
+      "But came the waves and washed it away:",
+      "Again I wrote it with a second hand,",
+      "But came the tide, and made my pains his prey."
+    ],
+    "editorial_note": "Spenser writes a name on the beach, the sea erases it, and he argues poetry will outlast the tide. The small futile gesture sets up a large claim. Text follows Amoretti, 1595."
+  },
+  {
+    "id": "to-my-dear-and-loving-husband",
+    "slug": "to-my-dear-and-loving-husband",
+    "title": "To My Dear and Loving Husband",
+    "author": "Anne Bradstreet",
+    "year": 1678,
+    "lines": [
+      "If ever two were one, then surely we.",
+      "If ever man were loved by wife, then thee;",
+      "If ever wife was happy in a man,",
+      "Compare with me, ye women, if you can."
+    ],
+    "editorial_note": "America's first published poet writes plainly and stakes a confident claim on happiness. The 'if ever' anaphora dares anyone to match her. Text follows the posthumous 1678 Several Poems."
+  },
+  {
+    "id": "a-valediction-forbidding-mourning",
+    "slug": "a-valediction-forbidding-mourning",
+    "title": "A Valediction: Forbidding Mourning",
+    "author": "John Donne",
+    "year": 1633,
+    "lines": [
+      "As virtuous men pass mildly away,",
+      "And whisper to their souls to go,",
+      "Whilst some of their sad friends do say",
+      "The breath goes now, and some say, No:"
+    ],
+    "editorial_note": "Donne tells his wife not to grieve their parting and reaches for the famous compass image to prove it. It opens, strikingly, with a deathbed. Text follows the posthumous Poems, 1633."
+  },
+  {
+    "id": "abou-ben-adhem",
+    "slug": "abou-ben-adhem",
+    "title": "Abou Ben Adhem",
+    "author": "Leigh Hunt",
+    "year": 1834,
+    "lines": [
+      "Abou Ben Adhem (may his tribe increase!)",
+      "Awoke one night from a deep dream of peace,",
+      "And saw, within the moonlight in his room,",
+      "Making it rich, and like a lily in bloom,"
+    ],
+    "editorial_note": "A small parable that love of one's fellow men outranks even love of God. Hunt tells it with a fable's warmth and economy. Text follows the 1834 printing in the New Monthly Magazine."
+  },
+  {
+    "id": "they-are-not-long",
+    "slug": "they-are-not-long",
+    "title": "They Are Not Long",
+    "author": "Ernest Dowson",
+    "year": 1896,
+    "lines": [
+      "They are not long, the weeping and the laughter,",
+      "Love and desire and hate:",
+      "I think they have no portion in us after",
+      "We pass the gate."
+    ],
+    "editorial_note": "Dowson compresses a whole philosophy of transience into a few lines that lend Hollywood its phrase 'the days of wine and roses.' Brief by design. Text follows Verses, 1896."
+  },
+  {
+    "id": "if",
+    "slug": "if",
+    "title": "If—",
+    "author": "Rudyard Kipling",
+    "year": 1910,
+    "lines": [
+      "If you can keep your head when all about you",
+      "Are losing theirs and blaming it on you,",
+      "If you can trust yourself when all men doubt you,",
+      "But make allowance for their doubting too;"
+    ],
+    "editorial_note": "A father's column of conditions, each 'if' withholding the reward until the very last line. Its steady cadence is the discipline it preaches. Text follows Rewards and Fairies, 1910."
+  },
+  {
+    "id": "when-i-was-one-and-twenty",
+    "slug": "when-i-was-one-and-twenty",
+    "title": "When I Was One-and-Twenty",
+    "author": "A. E. Housman",
+    "year": 1896,
+    "lines": [
+      "When I was one-and-twenty",
+      "I heard a wise man say,",
+      "'Give crowns and pounds and guineas",
+      "But not your heart away;"
+    ],
+    "editorial_note": "Housman lets a young man ignore good advice and pay for it a stanza later. The lightness of the verse hides the bruise. Text follows A Shropshire Lad, 1896."
+  },
+  {
+    "id": "the-donkey",
+    "slug": "the-donkey",
+    "title": "The Donkey",
+    "author": "G. K. Chesterton",
+    "year": 1900,
+    "lines": [
+      "When fishes flew and forests walked",
+      "And figs grew upon thorn,",
+      "Some moment when the moon was blood",
+      "Then surely I was born."
+    ],
+    "editorial_note": "Chesterton gives the lowly donkey a voice, and saves its one moment of glory for the final stanza. The grotesque opening makes the ending land harder. Text follows The Wild Knight, 1900."
+  },
+  {
+    "id": "dulce-et-decorum-est",
+    "slug": "dulce-et-decorum-est",
+    "title": "Dulce et Decorum Est",
+    "author": "Wilfred Owen",
+    "year": 1920,
+    "lines": [
+      "Bent double, like old beggars under sacks,",
+      "Knock-kneed, coughing like hags, we cursed through sludge,",
+      "Till on the haunting flares we turned our backs,",
+      "And towards our distant rest began to trudge."
+    ],
+    "editorial_note": "Owen drags the reader through the mud to dismantle the old lie that it is sweet to die for one's country. The exhausted similes do the arguing. Text follows the posthumous Poems, 1920. A frank depiction of war."
+  },
+  {
+    "id": "everyone-sang",
+    "slug": "everyone-sang",
+    "title": "Everyone Sang",
+    "author": "Siegfried Sassoon",
+    "year": 1919,
+    "lines": [
+      "Everyone suddenly burst out singing;",
+      "And I was filled with such delight",
+      "As prisoned birds must find in freedom,",
+      "Winging wildly across the white"
+    ],
+    "editorial_note": "Written at the Armistice, the poem lets relief arrive as uncontrollable song. After years of his war verse, the release is almost startling. Text follows Picture Show, 1919."
+  },
+  {
+    "id": "the-oxen",
+    "slug": "the-oxen",
+    "title": "The Oxen",
+    "author": "Thomas Hardy",
+    "year": 1915,
+    "lines": [
+      "Christmas Eve, and twelve of the clock.",
+      "'Now they are all on their knees,'",
+      "An elder said as we sat in a flock",
+      "By the embers in hearthside ease."
+    ],
+    "editorial_note": "Hardy recalls a childhood legend that beasts kneel at midnight on Christmas, and half-wishes he still believed it. Doubt and yearning sit by the same fire. Text follows the 1915 printing in The Times."
+  },
+  {
+    "id": "silver",
+    "slug": "silver",
+    "title": "Silver",
+    "author": "Walter de la Mare",
+    "year": 1913,
+    "lines": [
+      "Slowly, silently, now the moon",
+      "Walks the night in her silver shoon;",
+      "This way, and that, she peers, and sees",
+      "Silver fruit upon silver trees;"
+    ],
+    "editorial_note": "Nearly every line places the word 'silver,' so the poem itself seems moonlit. De la Mare turns repetition into a hush. Text follows Peacock Pie, 1913."
+  },
+  {
+    "id": "richard-cory",
+    "slug": "richard-cory",
+    "title": "Richard Cory",
+    "author": "Edwin Arlington Robinson",
+    "year": 1897,
+    "lines": [
+      "Whenever Richard Cory went down town,",
+      "We people on the pavement looked at him:",
+      "He was a gentleman from sole to crown,",
+      "Clean favored, and imperially slim."
+    ],
+    "editorial_note": "Robinson builds an enviable man in three stanzas so the last line can pull the floor out. The admiring tone is the trap. Text follows The Children of the Night, 1897. The ending touches on suicide."
+  },
+  {
+    "id": "a-man-said-to-the-universe",
+    "slug": "a-man-said-to-the-universe",
+    "title": "A Man Said to the Universe",
+    "author": "Stephen Crane",
+    "year": 1899,
+    "lines": [
+      "A man said to the universe:",
+      "'Sir, I exist!'",
+      "'However,' replied the universe,",
+      "'The fact has not created in me"
+    ],
+    "editorial_note": "Crane stages cosmic indifference as a flat little exchange, and the universe gets the better lines. Its modern dryness still startles. Text follows War Is Kind, 1899."
+  },
+  {
+    "id": "lift-every-voice-and-sing",
+    "slug": "lift-every-voice-and-sing",
+    "title": "Lift Every Voice and Sing",
+    "author": "James Weldon Johnson",
+    "year": 1900,
+    "lines": [
+      "Lift every voice and sing,",
+      "Till earth and heaven ring,",
+      "Ring with the harmonies of Liberty;",
+      "Let our rejoicing rise"
+    ],
+    "editorial_note": "Written for a Lincoln's-birthday celebration and later called the Black national anthem. The verbs all reach upward. Text follows the 1900 lyric, later collected in 1922."
+  },
+  {
+    "id": "yet-do-i-marvel",
+    "slug": "yet-do-i-marvel",
+    "title": "Yet Do I Marvel",
+    "author": "Countee Cullen",
+    "year": 1925,
+    "lines": [
+      "I doubt not God is good, well-meaning, kind,",
+      "And did He stoop to quibble could tell why",
+      "The little buried mole continues blind,",
+      "Why flesh that mirrors Him must some day die,"
+    ],
+    "editorial_note": "Cullen frames a sonnet of theological puzzles only to spring the real one in its final couplet. The classical form makes the closing turn sting. Text follows Color, 1925."
+  },
+  {
+    "id": "america",
+    "slug": "america",
+    "title": "America",
+    "author": "Claude McKay",
+    "year": 1921,
+    "lines": [
+      "Although she feeds me bread of bitterness,",
+      "And sinks into my throat her tiger's tooth,",
+      "Stealing my breath of life, I will confess",
+      "I love this cultured hell that tests my youth."
+    ],
+    "editorial_note": "McKay holds love and fury for the same country in a single breath and refuses to resolve them. The contradiction is the truth of it. Text follows the 1921 printing in the Liberator."
+  },
+  {
+    "id": "mother-to-son",
+    "slug": "mother-to-son",
+    "title": "Mother to Son",
+    "author": "Langston Hughes",
+    "year": 1922,
+    "lines": [
+      "Well, son, I'll tell you:",
+      "Life for me ain't been no crystal stair.",
+      "It's had tacks in it,",
+      "And splinters,"
+    ],
+    "editorial_note": "Hughes gives a mother a plain extended metaphor of a battered staircase and her refusal to stop climbing. The voice carries everything. Text follows the 1922 printing in The Crisis."
+  },
+  {
+    "id": "i-too",
+    "slug": "i-too",
+    "title": "I, Too",
+    "author": "Langston Hughes",
+    "year": 1926,
+    "lines": [
+      "I, too, sing America.",
+      "I am the darker brother.",
+      "They send me to eat in the kitchen",
+      "When company comes,"
+    ],
+    "editorial_note": "A quiet answer to Whitman that claims the table and the nation. Confidence builds line by line toward 'tomorrow.' Text follows The Weary Blues, 1926."
+  },
+  {
+    "id": "recuerdo",
+    "slug": "recuerdo",
+    "title": "Recuerdo",
+    "author": "Edna St. Vincent Millay",
+    "year": 1920,
+    "lines": [
+      "We were very tired, we were very merry-",
+      "We had gone back and forth all night on the ferry.",
+      "It was bare and bright, and smelled like a stable-",
+      "But we looked into a fire, we leaned across a table,"
+    ],
+    "editorial_note": "Millay turns one giddy, sleepless night into a refrain of tiredness and joy. The repeated opening line rocks like the ferry itself. Text follows A Few Figs from Thistles, 1920."
+  },
+  {
+    "id": "afternoon-on-a-hill",
+    "slug": "afternoon-on-a-hill",
+    "title": "Afternoon on a Hill",
+    "author": "Edna St. Vincent Millay",
+    "year": 1917,
+    "lines": [
+      "I will be the gladdest thing",
+      "Under the sun!",
+      "I will touch a hundred flowers",
+      "And not pick one."
+    ],
+    "editorial_note": "A small vow of pure, uncomplicated happiness, all light and air. The choice not to pick is its quiet grace. Text follows Renascence and Other Poems, 1917."
+  },
+  {
+    "id": "the-red-wheelbarrow",
+    "slug": "the-red-wheelbarrow",
+    "title": "The Red Wheelbarrow",
+    "author": "William Carlos Williams",
+    "year": 1923,
+    "lines": [
+      "so much depends",
+      "upon",
+      "a red wheel",
+      "barrow"
+    ],
+    "editorial_note": "Williams stakes everything on plain attention to an ordinary object, and the broken lines force you to look. Sixteen words, no capital letters, no metaphor. Text follows Spring and All, 1923."
+  },
+  {
+    "id": "in-a-station-of-the-metro",
+    "slug": "in-a-station-of-the-metro",
+    "title": "In a Station of the Metro",
+    "author": "Ezra Pound",
+    "year": 1913,
+    "lines": [
+      "The apparition of these faces in the crowd;",
+      "Petals on a wet, black bough."
+    ],
+    "editorial_note": "Pound pared a thirty-line draft down to two, and Imagism had its manifesto. The whole poem is one image laid against another. Text follows the 1913 printing in Poetry."
+  },
+  {
+    "id": "the-love-song-of-j-alfred-prufrock",
+    "slug": "the-love-song-of-j-alfred-prufrock",
+    "title": "The Love Song of J. Alfred Prufrock",
+    "author": "T. S. Eliot",
+    "year": 1915,
+    "lines": [
+      "Let us go then, you and I,",
+      "When the evening is spread out against the sky",
+      "Like a patient etherized upon a table;",
+      "Let us go, through certain half-deserted streets,"
+    ],
+    "editorial_note": "Eliot opens a love song with an anaesthetised sky, and modern poetry's nervous self-consciousness arrives fully formed. The third line is the famous swerve. Text follows the 1915 printing in Poetry."
+  },
+  {
+    "id": "the-snow-man",
+    "slug": "the-snow-man",
+    "title": "The Snow Man",
+    "author": "Wallace Stevens",
+    "year": 1921,
+    "lines": [
+      "One must have a mind of winter",
+      "To regard the frost and the boughs",
+      "Of the pine-trees crusted with snow;",
+      "And have been cold a long time"
+    ],
+    "editorial_note": "Stevens argues that to see winter truly you must empty yourself of feeling about it. The chilly logic is the poem's strange beauty. Text follows the 1921 printing in Poetry."
+  },
+  {
+    "id": "fire-and-ice",
+    "slug": "fire-and-ice",
+    "title": "Fire and Ice",
+    "author": "Robert Frost",
+    "year": 1920,
+    "lines": [
+      "Some say the world will end in fire,",
+      "Some say in ice.",
+      "From what I've tasted of desire",
+      "I hold with those who favor fire."
+    ],
+    "editorial_note": "Frost weighs apocalypse by fire against ice and maps them onto desire and hate, all with a shrug. Nine lines, casual and chilling. Text follows the 1920 printing in Harper's Magazine."
+  },
+  {
+    "id": "nothing-gold-can-stay",
+    "slug": "nothing-gold-can-stay",
+    "title": "Nothing Gold Can Stay",
+    "author": "Robert Frost",
+    "year": 1923,
+    "lines": [
+      "Nature's first green is gold,",
+      "Her hardest hue to hold.",
+      "Her early leaf's a flower;",
+      "But only so an hour."
+    ],
+    "editorial_note": "Frost watches the first gold of spring fade and folds Eden into eight lines. The tight rhymes pass as quickly as the thing they mourn. Text follows New Hampshire, 1923."
+  },
+  {
+    "id": "a-noiseless-patient-spider",
+    "slug": "a-noiseless-patient-spider",
+    "title": "A Noiseless Patient Spider",
+    "author": "Walt Whitman",
+    "year": 1868,
+    "lines": [
+      "A noiseless patient spider,",
+      "I mark'd where on a little promontory it stood isolated,",
+      "Mark'd how to explore the vacant vast surrounding,",
+      "It launch'd forth filament, filament, filament, out of itself."
+    ],
+    "editorial_note": "Whitman watches a spider fling out threads into emptiness and sees his own soul doing the same. The repeated 'filament' is the reaching made audible. Text follows the 1868 printing, later in Leaves of Grass."
+  },
+  {
+    "id": "the-second-coming",
+    "slug": "the-second-coming",
+    "title": "The Second Coming",
+    "author": "W. B. Yeats",
+    "year": 1920,
+    "lines": [
+      "Turning and turning in the widening gyre",
+      "The falcon cannot hear the falconer;",
+      "Things fall apart; the centre cannot hold;",
+      "Mere anarchy is loosed upon the world,"
+    ],
+    "editorial_note": "Written after the Great War, the poem's images of disintegration have never stopped being quoted. The third line alone has become shorthand for collapse. Text follows the 1920 printing in The Dial."
+  },
+  {
+    "id": "he-wishes-for-the-cloths-of-heaven",
+    "slug": "he-wishes-for-the-cloths-of-heaven",
+    "title": "He Wishes for the Cloths of Heaven",
+    "author": "W. B. Yeats",
+    "year": 1899,
+    "lines": [
+      "Had I the heavens' embroidered cloths,",
+      "Enwrought with golden and silver light,",
+      "The blue and the dim and the dark cloths",
+      "Of night and light and the half-light,"
+    ],
+    "editorial_note": "Yeats offers, having nothing, only his dreams, and asks that they be trodden on softly. The poverty is what makes the gift tender. Text follows The Wind Among the Reeds, 1899."
+  },
+  {
+    "id": "a-dream-within-a-dream",
+    "slug": "a-dream-within-a-dream",
+    "title": "A Dream Within a Dream",
+    "author": "Edgar Allan Poe",
+    "year": 1849,
+    "lines": [
+      "Take this kiss upon the brow!",
+      "And, in parting from you now,",
+      "Thus much let me avow-",
+      "You are not wrong, who deem"
+    ],
+    "editorial_note": "Poe begins with a farewell and ends doubting whether anything was ever real, the sand running through his fingers. A parting that questions existence itself. Text follows the 1849 printing in the Flag of Our Union."
+  },
+  {
+    "id": "a-birthday",
+    "slug": "a-birthday",
+    "title": "A Birthday",
+    "author": "Christina Rossetti",
+    "year": 1862,
+    "lines": [
+      "My heart is like a singing bird",
+      "Whose nest is in a watered shoot;",
+      "My heart is like an apple-tree",
+      "Whose boughs are bent with thick-set fruit;"
+    ],
+    "editorial_note": "Rossetti piles up images of abundance to match a joy that ordinary speech can't carry. The similes keep overflowing because the feeling does. Text follows Goblin Market and Other Poems, 1862."
   }
 ]
