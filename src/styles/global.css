@@ -22,7 +22,16 @@
   --frame:       900px;
   --frame-inset: 115px;
   --measure:     670px;
+
+  /* Top-nav band: one source of truth for the solid backing height (/poems),
+     content clearance, and scroll-padding. --hairline matches the .poem-row
+     divider so the band's bottom edge reads as one more rule. */
+  --nav-h:       58px;
+  --hairline:    rgba(245, 245, 245, 0.06);
 }
+
+/* Anchored / keyboard scrolls stop below the fixed nav band. */
+html { scroll-padding-top: var(--nav-h); }
 
 /* On narrow viewports the 115px insets are too heavy — relax them. */
 @media (max-width: 700px) {
@@ -463,6 +472,21 @@ html, body {
 .ktop-left  { justify-self: start; }
 .ktop-center { justify-self: center; }
 .ktop-right { justify-self: end; }
+
+/* Full-bleed solid band behind the fixed nav, /poems only — masks the 100 rows
+   as they scroll up past the chrome. Anchored to <body> (NOT .ktop, which has a
+   transform and would clamp a fixed child to the frame width); body is
+   transform-free, so position:fixed is viewport-relative → true edge-to-edge.
+   z-index 5 sits above page content (auto) and below the .ktop icons (6). */
+body[data-page="poems"]::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: var(--nav-h);
+  background: var(--bg);
+  z-index: 5;
+  box-shadow: 0 1px 0 var(--hairline);
+}
 
 /* calendar + MM/DD, stacked, at the left edge of the measure */
 .ktop-cal {
