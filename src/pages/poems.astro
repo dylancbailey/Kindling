@@ -13,6 +13,7 @@ const { poems } = await getCorpus();
       <div class="collection-head">
         <div class="ttl">The Collection</div>
         <div class="sub">Public-domain poems to warm up on</div>
+        <a class="collection-submit" href="/submit">Submit your poem to be added &rarr;</a>
         <div class="kprogress" id="kprogress" hidden></div>
       </div>
       {poems.map((p) => (
@@ -24,6 +25,8 @@ const { poems } = await getCorpus();
     </div>
   </main>
   <footer class="kfooter solo">
+    <a class="k-open" href="/submit">submit a poem</a>
+    <span class="k-foot-sep" aria-hidden="true">·</span>
     <a class="k-open" href="https://lannair.app" target="_blank" rel="noopener">get Lannair →</a>
   </footer>
 

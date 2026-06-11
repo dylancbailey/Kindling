@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// The poet-submission page. Kindling's corpus is public-domain, but this opens a
+// separate, curated track for LIVING poets to share a poem (with a link back to
+// them). There's no backend — submissions arrive by email, and each featured
+// poem is hand-reviewed and hand-added, exactly like the canon. The email address
+// is assembled in the browser from parts (see the inline script) so it isn't sat
+// in the static HTML as a plain string for scrapers; a <noscript> fallback keeps
+// it usable with JavaScript off.
+---
+<BaseLayout
+  title="Share a poem — Kindling"
+  description="Are you a living poet? Share a poem to be featured on Kindling, with a link back to you. A small, hand-curated way to put your work in front of people who type slowly and read closely."
+>
+  <main class="submit">
+    <div class="submit-wrap">
+      <header class="submit-head">
+        <h1 class="submit-ttl">Share a poem</h1>
+        <p class="submit-lede">
+          Kindling's collection is built from public-domain poems. This is the other door —
+          for <em>living</em> poets. If you've written something a person might want to type
+          slowly, line by line, send it over. Featured poems sit alongside the canon, with a
+          quiet link back to you.
+        </p>
+      </header>
+
+      <section class="submit-sec">
+        <h2 class="submit-h2">What we look for</h2>
+        <p>
+          Short enough to type in one calm sitting — roughly four to twenty lines. Plain,
+          typeable text (no layout that leans on unusual characters). And it has to be yours
+          to give. Beyond that, we're simply looking for poems that reward a slow read.
+        </p>
+      </section>
+
+      <section class="submit-sec">
+        <h2 class="submit-h2">What happens after</h2>
+        <p>
+          A real person reads everything — that person is one person, so replies can take weeks,
+          and most submissions won't be featured. There's no automated confirmation. If a poem is
+          chosen, it's added to the site with your name and a link, and you can ask to have it
+          removed at any time.
+        </p>
+      </section>
+
+      <section class="submit-sec">
+        <h2 class="submit-h2">The fine print (the important part)</h2>
+        <p>
+          Your work is yours, and it stays yours. To feature it, we just need your explicit
+          permission: that you wrote it and own it, and that you grant Kindling a
+          non-exclusive, royalty-free license to display it on kindlingwriting.app with
+          attribution and a link to you. The email template below states this so you only have
+          to tick a couple of boxes. Prefer a named license? You're welcome to offer it under
+          <a class="submit-inline" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons&nbsp;BY&nbsp;4.0</a>.
+        </p>
+      </section>
+
+      <div class="submit-cta">
+        <a id="submit-mail" class="submit-btn" href="#">Write your submission email&nbsp;→</a>
+        <p class="submit-fallback" id="submit-fallback" hidden></p>
+        <noscript>
+          <p class="submit-fallback">
+            Email your poem to <strong>contactdylanmercer&#64;proton&#46;me</strong> with the
+            subject line “Kindling poem submission”. Please include your name, a link to you,
+            one line about the poem, the full poem, and a note confirming you wrote it and grant
+            Kindling permission to display it with attribution.
+          </p>
+        </noscript>
+      </div>
+    </div>
+  </main>
+
+  <footer class="kfooter solo">
+    <a class="k-open" href="/poems">the collection</a>
+    <span class="k-foot-sep" aria-hidden="true">·</span>
+    <a class="k-open" href="https://lannair.app" target="_blank" rel="noopener">get Lannair →</a>
+  </footer>
+
+  <!-- Build the mailto from parts (keeps the raw address out of static HTML) and
+       pre-fill the subject + body template. Re-run on every view-transition nav. -->
+  <script is:inline>
+    (function () {
+      function buildMailto() {
+        var a = document.getElementById('submit-mail');
+        if (!a) return;
+        var user = 'contactdylanmercer';
+        var domain = 'proton.me';
+        var addr = user + '@' + domain;
+
+        var subject = 'Kindling poem submission: [your title]';
+        var body = [
+          'Poem title:',
+          'Your name (as it should appear):',
+          'A link to you (website / Substack / social):',
+          'One line about you or the poem (max ~140 characters):',
+          '',
+          'Paste the full poem below this line — one line per line:',
+          '----------------------------------------',
+          '',
+          '',
+          '----------------------------------------',
+          'Required to be featured (replace [ ] with [x]):',
+          '[ ] I wrote this poem and I own the rights to it.',
+          '[ ] I grant Kindling a non-exclusive, royalty-free license to display it on',
+          '    kindlingwriting.app, with attribution and a link back to me.',
+          '[ ] The poem is plain, typeable text (no layout that needs special characters).'
+        ].join('\n');
+
+        a.href = 'mailto:' + addr +
+          '?subject=' + encodeURIComponent(subject) +
+          '&body=' + encodeURIComponent(body);
+
+        var fb = document.getElementById('submit-fallback');
+        if (fb) {
+          fb.innerHTML = 'Or write to <strong>' + addr + '</strong> directly.';
+          fb.hidden = false;
+        }
+      }
+      buildMailto();
+      if (!window.__kindleSubmitInit) {
+        window.__kindleSubmitInit = true;
+        document.addEventListener('astro:page-load', buildMailto);
+      }
+    })();
+  </script>
+</BaseLayout>

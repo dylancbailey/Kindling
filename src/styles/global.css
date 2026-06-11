@@ -405,6 +405,20 @@ html, body {
   color: rgba(245, 245, 245, 0.3);
   margin-top: 8px;
 }
+.collection-submit {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--ember);
+  opacity: 0.85;
+  text-decoration: none;
+  transition: opacity 0.2s ease, text-shadow 0.2s ease;
+}
+.collection-submit:hover {
+  opacity: 1;
+  text-shadow: 0 0 9px var(--ember-glow);
+}
 .poem-row {
   display: block;
   text-decoration: none;
@@ -707,3 +721,197 @@ body[data-page="poems"]::before {
   letter-spacing: 0.02em;
   color: rgba(245, 245, 245, 0.4);
 }
+
+/* ═══════════════════════════════════════════════════════════
+   Calendar link · submit page · calendar page
+   ═══════════════════════════════════════════════════════════ */
+
+/* The top-bar calendar is now a link to /calendar. Keep the muted-grey resting
+   state; ember on hover and when the calendar route is current. */
+a.ktop-cal { text-decoration: none; cursor: pointer; }
+a.ktop-cal:hover,
+.ktop-cal.current { color: var(--ember); }
+a.ktop-cal:hover .ktop-date,
+.ktop-cal.current .ktop-date { color: var(--ember); }
+
+/* Two quiet links in the lone footer (e.g. /poems, /submit, /calendar). */
+.kfooter.solo { gap: 14px; align-items: center; }
+.k-foot-sep {
+  color: rgba(245, 245, 245, 0.2);
+  font-size: 13px;
+  user-select: none;
+}
+
+/* ── /submit (share a poem) ───────────────────────────────── */
+.submit {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 96px 24px 88px;
+}
+.submit-wrap { width: min(620px, 92vw); }
+.submit-head { text-align: center; margin-bottom: 30px; }
+.submit-ttl {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  opacity: 0.92;
+}
+.submit-lede {
+  margin: 16px auto 0;
+  max-width: 540px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(245, 245, 245, 0.62);
+}
+.submit-lede em { color: var(--ember); font-style: italic; opacity: 0.9; }
+.submit-sec { margin-top: 26px; }
+.submit-h2 {
+  margin: 0 0 6px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ember);
+  opacity: 0.8;
+  font-weight: 600;
+}
+.submit-sec p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.68;
+  color: rgba(245, 245, 245, 0.55);
+}
+.submit-inline {
+  color: var(--ember);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 138, 82, 0.35);
+}
+.submit-inline:hover { border-bottom-color: var(--ember); }
+.submit-cta { margin-top: 36px; text-align: center; }
+.submit-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 1px solid rgba(201, 138, 82, 0.5);
+  border-radius: 10px;
+  color: var(--ember);
+  text-decoration: none;
+  font-size: 14.5px;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.submit-btn:hover {
+  background: rgba(201, 138, 82, 0.08);
+  border-color: var(--ember);
+  box-shadow: 0 0 18px var(--ember-glow);
+}
+.submit-fallback { margin: 14px 0 0; font-size: 12.5px; color: rgba(245, 245, 245, 0.3); }
+.submit-fallback strong { color: rgba(245, 245, 245, 0.5); font-weight: 500; }
+
+/* ── /calendar (mini month, today's poem lit) ─────────────── */
+.calpage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 92px 24px 84px;
+}
+.calpage-wrap { width: min(440px, 92vw); }
+.calpage-head { text-align: center; margin-bottom: 26px; }
+.calpage-head .ttl {
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  opacity: 0.9;
+}
+.calpage-head .sub {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: rgba(245, 245, 245, 0.3);
+  margin-top: 8px;
+}
+.cal-monthbar {
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: rgba(245, 245, 245, 0.55);
+  margin-bottom: 14px;
+}
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  align-items: stretch;
+}
+.cal-dow {
+  text-align: center;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 245, 0.28);
+  padding-bottom: 4px;
+}
+.cal-cell {
+  min-height: 46px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 4px;
+}
+.cal-cell:not(.cal-empty):not(.cal-today) { background: rgba(245, 245, 245, 0.03); }
+.cal-empty { min-height: 0; background: none; }
+.cal-num {
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+  color: rgba(245, 245, 245, 0.4);
+}
+/* today: the lit cell — ember ring, the poem title inside, the whole cell links */
+.cal-today {
+  text-decoration: none;
+  background: rgba(201, 138, 82, 0.1);
+  border: 1px solid var(--ember);
+  box-shadow: 0 0 16px var(--ember-glow);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.cal-today .cal-num { color: var(--ember); font-weight: 600; }
+.cal-poem {
+  margin-top: 3px;
+  font-size: 9.5px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--ember);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.cal-today:hover {
+  background: rgba(201, 138, 82, 0.16);
+  box-shadow: 0 0 22px var(--ember-glow);
+}
+.cal-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  margin-top: 22px;
+  text-align: center;
+  text-decoration: none;
+}
+.cal-cap-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 245, 0.32);
+}
+.cal-cap-title {
+  font-size: 15px;
+  color: var(--ember);
+  transition: text-shadow 0.2s ease;
+}
+.cal-caption:hover .cal-cap-title { text-shadow: 0 0 10px var(--ember-glow); }
+.cal-noscript { text-align: center; color: rgba(245, 245, 245, 0.4); font-size: 14px; }
+.cal-noscript a { color: var(--ember); }

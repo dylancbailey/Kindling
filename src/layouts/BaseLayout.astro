@@ -70,7 +70,9 @@ const flame = 'M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.
   <div id="curtain" aria-hidden="true"></div>
   <div class="ktop" aria-label="Primary">
     <div class="ktop-left">
-      <span class:list={['ktop-cal', { today: isToday }]}>
+      <a class:list={['ktop-cal', { today: isToday, current: path === '/calendar' }]} href="/calendar"
+         aria-label="Calendar — jump to a day's poem" title="Calendar"
+         aria-current={path === '/calendar' ? 'page' : undefined}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
           <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -79,7 +81,7 @@ const flame = 'M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.
         </svg>
         <span class="ktop-date" id="ktop-date"></span>
         {isToday && <span class="ktop-todaylabel">today's poem</span>}
-      </span>
+      </a>
     </div>
     <a class="ktop-center ktop-ember" href="/" aria-label="Kindling home">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d={flame}></path></svg>
