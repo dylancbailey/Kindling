@@ -57,20 +57,46 @@
     return Math.floor((d - start) / 86400000);   // Jan 1 = 1 … Dec 31 = 365/366
   }
 
+  // June 11 2026, the anchor for the daily rotation (month is 0-based in Date.UTC).
+  var POTD_ANCHOR = Date.UTC(2026, 5, 11);
+
+  // mulberry32 — a tiny, fast, deterministic PRNG seeded by an integer.
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = (a + 0x6D2B79F5) | 0;
+      var t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  // A full permutation of [0..n-1], reshuffled per cycle so each N-day block is a
+  // fresh non-repeating order. Same input → same output, on every device.
+  function shuffledIndices(n, cycle) {
+    var arr = []; for (var i = 0; i < n; i++) arr[i] = i;
+    var rnd = mulberry32((cycle ^ 0x9E3779B9) >>> 0);
+    for (var k = n - 1; k > 0; k--) {
+      var j = Math.floor(rnd() * (k + 1));
+      var tmp = arr[k]; arr[k] = arr[j]; arr[j] = tmp;
+    }
+    return arr;
+  }
+
   // Pick today's poem: a poem PINNED to today's calendar day wins; otherwise a
-  // date-seeded hash, so every visitor on the same day gets the same poem.
+  // deterministic, anchored, reshuffled permutation of the whole corpus, so each
+  // 100-day block shows every poem exactly once with no repeats.
   function pickTodayIndex(corpus) {
     var d = new Date();
     var doy = dayOfYear(d);
     for (var i = 0; i < corpus.length; i++) {
-      if (corpus[i].dayOfYear === doy) return i;   // pinned (e.g. a wintry poem at the solstice)
+      if (corpus[i].dayOfYear === doy) return i;   // thematic pins win (solstice, etc.)
     }
-    var ymd = d.getFullYear() + "-" +
-      String(d.getMonth() + 1).padStart(2, "0") + "-" +
-      String(d.getDate()).padStart(2, "0");
-    var h = 2166136261;
-    for (var j = 0; j < ymd.length; j++) { h ^= ymd.charCodeAt(j); h = Math.imul(h, 16777619); }
-    return Math.abs(h) % corpus.length;
+    var today = Date.UTC(d.getFullYear(), d.getMonth(), d.getDate());
+    var dayIdx = Math.floor((today - POTD_ANCHOR) / 86400000);
+    var N = corpus.length;
+    var cycle = Math.floor(dayIdx / N);            // which 100-day block we're in
+    var pos = ((dayIdx % N) + N) % N;              // position within the block (handles pre-anchor dates)
+    return shuffledIndices(N, cycle)[pos];
   }
 
   function nextPassage() {
